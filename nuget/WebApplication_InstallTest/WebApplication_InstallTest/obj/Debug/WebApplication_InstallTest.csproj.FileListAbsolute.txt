@@ -1,0 +1,7 @@
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\bin\WebApplication_InstallTest.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\bin\WebApplication_InstallTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\bin\Easemob.Restfull4Net.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\bin\Easemob.Restfull4Net.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\obj\Debug\WebApplication_InstallTest.csprojResolveAssemblyReference.cache
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\obj\Debug\WebApplication_InstallTest.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\WebApplication_InstallTest\WebApplication_InstallTest\obj\Debug\WebApplication_InstallTest.pdb

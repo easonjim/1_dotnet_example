@@ -1,0 +1,54 @@
+
+[日志输出开始]
+[2016-08-31 17:19:09:3590477]
+    Path：
+	https://a1.easemob.com/dotnetsdk/app1/token
+    Content：
+	Method:POST
+	Parames:{"grant_type":"client_credentials","client_id":"YXA6N9H0kFu6EeaqLQ1pVvXmDw","client_secret":"YXA6Ald8ijVmKwAtpH5CAMrnxbD6ad0"}
+	ReturnText:{"access_token":"YWMt91WRbm9bEea3DW0Rpu_LeAAAAVgU4qB-yKh3yZA03vJT82AG8LbqRAbdeGM","expires_in":5183999,"application":"37d1f490-5bba-11e6-aa2d-0d6956f5e60f"}
+	StatusCode:200
+[日志输出结束]
+
+
+[日志输出开始]
+[2016-08-31 17:19:09:6746273]
+    Path：
+	https://a1.easemob.com/dotnetsdk/app1/users
+    Content：
+	Method:POST
+	Parames:{"nickname":"Test201608311719094624","username":"Test201608311719095625","password":"123456"}
+	ReturnText:{
+  "action" : "post",
+  "application" : "37d1f490-5bba-11e6-aa2d-0d6956f5e60f",
+  "path" : "/users",
+  "uri" : "https://a1.easemob.com/dotnetsdk/app1/users",
+  "entities" : [ {
+    "uuid" : "f785ffc0-6f5b-11e6-a926-814b85c252ac",
+    "type" : "user",
+    "created" : 1472635146684,
+    "modified" : 1472635146684,
+    "username" : "Test201608311719095625",
+    "activated" : true,
+    "nickname" : "Test201608311719094624"
+  } ],
+  "timestamp" : 1472635146689,
+  "duration" : 0,
+  "organization" : "dotnetsdk",
+  "applicationName" : "app1"
+}
+	StatusCode:200
+[日志输出结束]
+
+
+[日志输出开始]
+[2016-08-31 17:21:22:6985712]
+    Path：
+	https://a1.easemob.com///users
+    Content：
+	Method:POST
+	Parames:{"nickname":"Test201608311721223045","username":"Test201608311721224066","password":"123456"}
+	ReturnText:{"error":"url is invalid"}
+	StatusCode:404
+[日志输出结束]
+
