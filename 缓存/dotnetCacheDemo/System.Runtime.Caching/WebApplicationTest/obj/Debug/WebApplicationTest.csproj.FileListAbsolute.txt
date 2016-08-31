@@ -1,0 +1,6 @@
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\bin\WebApplicationTest.dll.config
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\bin\WebApplicationTest.dll
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\bin\WebApplicationTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\obj\Debug\WebApplicationTest.csprojResolveAssemblyReference.cache
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\obj\Debug\WebApplicationTest.dll
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Runtime.Caching\WebApplicationTest\obj\Debug\WebApplicationTest.pdb

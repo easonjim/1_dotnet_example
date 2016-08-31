@@ -1,0 +1,8 @@
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\bin\Debug\WindowsFormsApplicationTest.exe
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\bin\Debug\WindowsFormsApplicationTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.Form1.resources
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.Properties.Resources.resources
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.csproj.GenerateResource.Cache
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.exe
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\缓存\dotnetCacheDemo\System.Web.Caching\WindowsFormsApplicationTest\obj\Debug\WindowsFormsApplicationTest.csprojResolveAssemblyReference.cache
