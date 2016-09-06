@@ -1,0 +1,12 @@
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ConsoleApplication_snk_Test.exe.manifest
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ConsoleApplication_snk_Test.application
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ConsoleApplication_snk_Test.exe
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ConsoleApplication_snk_Test.pdb
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ClassLibrary.dll
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\bin\Debug\ClassLibrary.pdb
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.csprojResolveAssemblyReference.cache
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.TrustInfo.xml
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.exe.manifest
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.application
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.exe
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ConsoleApplication_snk_Test\obj\x86\Debug\ConsoleApplication_snk_Test.pdb

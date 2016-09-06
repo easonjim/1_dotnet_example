@@ -1,0 +1,4 @@
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ClassLibrary\bin\Debug\ClassLibrary.dll
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ClassLibrary\bin\Debug\ClassLibrary.pdb
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ClassLibrary\obj\Debug\ClassLibrary.dll
+E:\开发工程\GitHub\1_dotnet_example\密钥\ConsoleApplication_snk_Test\ClassLibrary\obj\Debug\ClassLibrary.pdb
