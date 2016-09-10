@@ -1,0 +1,6 @@
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\bin\Debug\ProgressBar4.exe.config
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\bin\Debug\ProgressBar4.exe
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\bin\Debug\ProgressBar4.pdb
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\obj\Debug\ProgressBar4.csprojResolveAssemblyReference.cache
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\obj\Debug\ProgressBar4.exe
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar4\obj\Debug\ProgressBar4.pdb

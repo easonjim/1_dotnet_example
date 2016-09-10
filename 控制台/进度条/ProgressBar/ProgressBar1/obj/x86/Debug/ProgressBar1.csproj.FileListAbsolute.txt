@@ -1,0 +1,4 @@
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar1\bin\Debug\ProgressBar1.exe
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar1\bin\Debug\ProgressBar1.pdb
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar1\obj\x86\Debug\ProgressBar1.exe
+D:\开发工程\GitHub\1_dotnet_example\控制台\进度条\ProgressBar\ProgressBar1\obj\x86\Debug\ProgressBar1.pdb
