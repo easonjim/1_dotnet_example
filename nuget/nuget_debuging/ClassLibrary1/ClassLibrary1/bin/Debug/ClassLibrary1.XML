@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary1</name>
+    </assembly>
+    <members>
+        <member name="M:ClassLibrary1.Class1.GetName">
+            <summary>
+            获取名字
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

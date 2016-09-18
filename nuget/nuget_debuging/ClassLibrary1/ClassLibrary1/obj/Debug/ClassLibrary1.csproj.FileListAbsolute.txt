@@ -1,0 +1,14 @@
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.XML
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.0\lib\ClassLibrary1.XML
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.0\lib\ClassLibrary1.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.0\lib\ClassLibrary1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.1\lib\ClassLibrary1.XML
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.1\lib\ClassLibrary1.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\packages\MyPackage.1.0.1\lib\ClassLibrary1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ClassLibrary1.XML
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ClassLibrary1.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ClassLibrary1.pdb

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easonjimlib2", "easonjimlib2\easonjimlib2.csproj", "{171E8CA1-7834-4CC0-B230-E7A12F21B418}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{171E8CA1-7834-4CC0-B230-E7A12F21B418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171E8CA1-7834-4CC0-B230-E7A12F21B418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171E8CA1-7834-4CC0-B230-E7A12F21B418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171E8CA1-7834-4CC0-B230-E7A12F21B418}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

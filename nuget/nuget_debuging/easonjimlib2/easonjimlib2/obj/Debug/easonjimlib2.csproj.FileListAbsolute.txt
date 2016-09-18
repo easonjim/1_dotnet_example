@@ -1,0 +1,5 @@
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\easonjimlib2\easonjimlib2\bin\Debug\easonjimlib2.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\easonjimlib2\easonjimlib2\bin\Debug\easonjimlib2.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\easonjimlib2\easonjimlib2\obj\Debug\easonjimlib2.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\easonjimlib2\easonjimlib2\obj\Debug\easonjimlib2.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\easonjimlib2\easonjimlib2\bin\Debug\easonjimlib2.XML
