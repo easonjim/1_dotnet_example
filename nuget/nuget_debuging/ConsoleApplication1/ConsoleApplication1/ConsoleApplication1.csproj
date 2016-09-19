@@ -36,8 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="easonjimlib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\easonjimlib2.1.0.2\lib\net40\easonjimlib2.dll</HintPath>
+    <Reference Include="easonjimlib2, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\easonjimlib2.1.0.0.3\lib\net40\easonjimlib2.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

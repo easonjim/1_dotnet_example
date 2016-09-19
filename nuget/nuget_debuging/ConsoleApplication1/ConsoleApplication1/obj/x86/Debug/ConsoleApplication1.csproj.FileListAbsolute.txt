@@ -1,9 +1,3 @@
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\easonjimlib2.dll
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\easonjimlib2.xml
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
-D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\easonjimlib2.dll
@@ -11,3 +5,9 @@ E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
 E:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\bin\Debug\easonjimlib2.dll
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+D:\开发工程\GitHub\1_dotnet_example\nuget\nuget_debuging\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
