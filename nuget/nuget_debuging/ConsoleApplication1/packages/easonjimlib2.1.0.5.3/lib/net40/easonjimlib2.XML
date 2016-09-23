@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>easonjimlib2</name>
+    </assembly>
+    <members>
+        <member name="M:easonjimlib2.Class1.GetName">
+            <summary>
+            获取名称
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
