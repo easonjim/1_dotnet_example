@@ -1,0 +1,13 @@
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\MvcApplication_InstallTest.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\MvcApplication_InstallTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\Microsoft.Web.Infrastructure.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.Helpers.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.Mvc.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.Razor.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.WebPages.Deployment.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.WebPages.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.WebPages.Razor.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\obj\Debug\MvcApplication_InstallTest.csprojResolveAssemblyReference.cache
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\obj\Debug\MvcApplication_InstallTest.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\obj\Debug\MvcApplication_InstallTest.pdb
+E:\开发工程\GitHub\1_dotnet_example\nuget\MvcApplication_InstallTest\MvcApplication_InstallTest\bin\System.Web.Razor.xml
