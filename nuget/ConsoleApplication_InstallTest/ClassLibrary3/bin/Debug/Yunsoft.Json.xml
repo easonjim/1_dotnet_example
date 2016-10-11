@@ -1,0 +1,1105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yunsoft.Json</name>
+    </assembly>
+    <members>
+        <member name="T:Yunsoft.Json.Mask">
+            <summary>
+            Provides masking services where one value masks another given a test.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.BufferedCharReader">
+            <summary>
+            This type supports the Yunsoft JSON infrastructure and is not 
+            intended to be used directly from your code. 
+            Beware! There be dragons!
+            </summary>    
+            <remarks>
+            This type may become inaccessible in the future. It is public
+            for the purpose of unit testing.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.BufferedCharReader.Back">
+            <summary>
+            Back up one character. This provides a sort of lookahead capability,
+            so that one can test for a digit or letter before attempting to,
+            for example, parse the next number or identifier.
+            </summary>
+            <remarks>
+            This implementation currently does not support backing up more
+            than a single character (the last read).
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.BufferedCharReader.More">
+            <summary>
+            Determine if the source string still contains characters that Next()
+            can consume.
+            </summary>
+            <returns>true if not yet at the end of the source.</returns>
+        </member>
+        <member name="M:Yunsoft.Json.BufferedCharReader.Next">
+            <summary>
+            Get the next character in the source string.
+            </summary>
+            <returns>The next character, or 0 if past the end of the source string.</returns>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IExporter">
+            <summary>
+            Defines the contract for exporting an object as JSON.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.Converters.DateTimeExporter">
+            <remarks>
+            See <a href="http://www.w3.org/TR/NOTE-datetime">W3C note on date 
+            and time formats</a>.
+            </remarks>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.CustomTypeDescriptor">
+            <summary>
+            Provides an <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation on top of the
+            public read/write fields and properties of a given type.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Conversion.CustomTypeDescriptor.LikeAnonymousClass(System.Type)">
+             <summary>
+             Forward-compatible way to see if the given type is an anonymous 
+             class (introduced since C# 3.0). 
+             </summary>
+             <remarks>
+             There is no sure shot method so we have rely to rely on a 
+             heuristic approach by looking for a few known characteristics.
+             Note also that we take a "duck" approach to look for the 
+             CompilerGenerated attribute under .NET Framework 1.x, which does 
+             not seem like an appaling idea considering that the C# compiler 
+             does the with ExtensionAttribute when it comes to extension 
+             methods.
+             </remarks>
+            
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.CustomTypeDescriptor.TypeMemberDescriptor">
+            <summary>
+            A base <see cref="T:System.ComponentModel.PropertyDescriptor"/> implementation for
+            a type member (<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IPropertyImpl">
+            <summary>
+            Defines getter and setter methods that encapsulate a property 
+            implementation.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IPropertyCustomization">
+            <summary>
+            Advertises a property that can be customized at run-time.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.CustomTypeDescriptor.TypeFieldDescriptor">
+            <summary>
+            A <see cref="T:System.ComponentModel.PropertyDescriptor"/> implementation around
+            <see cref="T:System.Reflection.FieldInfo"/>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.CustomTypeDescriptor.TypePropertyDescriptor">
+            <summary>
+            A <see cref="T:System.ComponentModel.PropertyDescriptor"/> implementation around
+            <see cref="T:System.Reflection.PropertyInfo"/>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IJsonExportable">
+            <summary>
+            This interface allows objects to provide their own implementation for
+            exporting as JSON.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IJsonImportable">
+            <summary>
+            This interface allows objects to provide their own implementation for
+            exporting as JSON.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.INonObjectMemberImporter">
+            <summary>
+            Defines how members of a JSON object that do not map to a
+            custom type will be imported and handled.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Conversion.INonObjectMemberImporter.Import(Yunsoft.Json.Conversion.ImportContext,System.String,Yunsoft.Json.JsonReader)">
+            <summary>
+            Optionally imports a JSON object member that does not
+            map to a member of a custom type.
+            </summary>
+            <returns>
+            Returns <c>true</c> if the member was imported and handled. 
+            Otherwise returns <c>false</c> to indicate to the caller 
+            that the member should skipped and silently ignored.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IObjectMemberExporter">
+            <summary>
+            Defines methods to export a single JSON Object member.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Conversion.IObjectMemberExporter.Export(Yunsoft.Json.Conversion.ExportContext,Yunsoft.Json.JsonWriter,System.Object)">
+            <summary>
+            Gets a value from a source object and exports it as a JSON 
+            Object member (name plus value).
+            </summary>
+            <remarks>
+            The implementation is responsible for writing the member
+            name and value. The implementation is free to omit writing
+            anything to produce a terser output. For example, if the
+            corresponding field or property of the source object is
+            null then the implementation could just do nothing instead
+            of emitting the member name with a value of JSON Null.
+            </remarks>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IObjectMemberImporter">
+            <summary>
+            Defines methods to import a single JSON Object member value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Conversion.IObjectMemberImporter.Import(Yunsoft.Json.Conversion.ImportContext,Yunsoft.Json.JsonReader,System.Object)">
+            <summary>
+            Imports a single incoming JSON Object member and sends its value
+            to the target object (usually to a corresponding field or 
+            property).
+            </summary>
+            <remarks>
+            The implementation is only responsible for reading the member
+            value and not the name. The caller should have already
+            read the JSON Object member name. The implementation is, 
+            however, responsible for projecting the member value on to
+            the target object. Whether it actually does that or not,
+            it must under all circumstances advance the reader to the
+            token following the value (which should normally be another
+            member name or end of the object).
+            </remarks>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.JsonConvert">
+            <summary>
+            Provides methods for converting between Common Language Runtime 
+            (CLR) types and JSON types.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.JsonDefaultValueAttribute">
+            <summary>
+            Specifies the default value for a property. At export time, if the 
+            property value compares equal to the specified default value then its
+            JSON representation is skipped.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.IPropertyDescriptorCustomization">
+            <summary>
+            Marks a type, typically an attribute, as a customization targeting
+            a <see cref="T:System.ComponentModel.PropertyDescriptor"/>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.JsonExportAttribute">
+            <summary>
+            Instructs a JSON serializer to write out the value of a public property
+            when it wouldn't be included otherwise.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Conversion.JsonIgnoreAttribute">
+            <summary>
+            Instructs a JSON serializer not to write out the value of a public field
+            or property.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Diagnostics.DebugString">
+            <summary>
+            This type supports the Yunsoft infrastructure and is not intended to 
+            be used directly from your code.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Dynamic.Option`1">
+            <summary>
+            Represents an optional value, somewhat like
+            <a href="http://msdn.microsoft.com/en-us/library/dd233245.aspx">the option type in F#</a>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.Dynamic.DynamicMetaObject`1">
+            <remarks>
+            This DMO implementation has been adapted from that of 
+            System.Dynamic.DynamicObject, from the CodePlex DLR 1.0 sources, 
+            and therefore licensed under the terms and conditions of
+            <a href="http://www.opensource.org/licenses/ms-pl.html">Ms-PL</a>.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.Dynamic.DynamicMetaObject`1.CallMethodWithResult(System.String,System.Dynamic.DynamicMetaObjectBinder,System.Linq.Expressions.Expression[],Yunsoft.Json.Dynamic.DynamicMetaObject{`0}.Fallback,Yunsoft.Json.Dynamic.DynamicMetaObject{`0}.Fallback)">
+            <summary>
+            Helper method for generating a MetaObject which calls a
+            specific method on Dynamic that returns a result
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Dynamic.DynamicMetaObject`1.CallMethodReturnLast(System.String,System.Dynamic.DynamicMetaObjectBinder,System.Linq.Expressions.Expression[],Yunsoft.Json.Dynamic.DynamicMetaObject{`0}.Fallback)">
+            <summary>
+            Helper method for generating a MetaObject which calls a
+            specific method on Dynamic, but uses one of the arguments for
+            the result.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Dynamic.DynamicMetaObject`1.CallMethodNoResult(System.String,System.Dynamic.DynamicMetaObjectBinder,System.Linq.Expressions.Expression[],Yunsoft.Json.Dynamic.DynamicMetaObject{`0}.Fallback)">
+            <summary>
+            Helper method for generating a MetaObject which calls a
+            specific method on Dynamic, but uses one of the arguments for
+            the result.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Dynamic.DynamicMetaObject`1.GetRestrictions">
+            <summary>
+            Returns a Restrictions object which includes our current restrictions merged
+            with a restriction limiting our type
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonWriterBase">
+            <summary>
+            Base implementation of <see cref="T:Yunsoft.Json.JsonWriter"/> that can be used
+            as a starting point for sub-classes of <see cref="T:Yunsoft.Json.JsonWriter"/>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonWriter">
+            <summary>
+            Represents a writer that provides a fast, non-cached, forward-only means of 
+            emitting JSON data.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteStartObject">
+            <summary>
+            When overridden in a derived class, writes out the start of a 
+            JSON object.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteEndObject">
+            <summary>
+            When overridden in a derived class, writes out the end of a 
+            JSON object.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteMember(System.String)">
+            <summary>
+            When overridden in a derived class, writes out an object
+            member (but not its value).
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteStartArray">
+            <summary>
+            When overridden in a derived class, writes out the start of a 
+            JSON array.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteEndArray">
+            <summary>
+            When overridden in a derived class, writes out the end of a 
+            JSON array.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteString(System.String)">
+            <summary>
+            When overridden in a derived class, writes out a JSON string 
+            value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteString(System.Char[])">
+            <summary>
+            Writes a JSON string from an array of characters.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteString(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Writes a JSON string from an array of characters, given a
+            starting position and length.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.String)">
+            <summary>
+            When overridden in a derived class, writes out a JSON number 
+            value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteBoolean(System.Boolean)">
+            <summary>
+            When overridden in a derived class, writes out a JSON boolean 
+            value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNull">
+            <summary>
+            When overridden in a derived class, writes out the JSON null
+            value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.Flush">
+            <summary>
+            When overridden in a derived class, flushes whatever is in the 
+            buffer to the underlying streams and also flushes the 
+            underlying stream. The default implementation does nothing.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.Close">
+            <summary>
+            Closes the writer and releases any underlying resources 
+            associated with the writer.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Byte)">
+            <summary>
+            Writes a JSON number from a <see cref="T:System.Byte"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Int16)">
+            <summary>
+            Writes a JSON number from an <see cref="T:System.Int16"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Int32)">
+            <summary>
+            Writes a JSON number from an <see cref="T:System.Int32"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Int64)">
+            <summary>
+            Writes a JSON number from an <see cref="T:System.Int64"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Decimal)">
+            <summary>
+            Writes a JSON number from a <see cref="T:System.Decimal"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Single)">
+            <summary>
+            Writes a JSON number from a <see cref="T:System.Single"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteNumber(System.Double)">
+            <summary>
+            Writes a JSON number from a <see cref="T:System.Double"/> value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteStringArray(System.Collections.IEnumerable)">
+            <summary>
+            Writes a JSON array of JSON strings given an enumerable source
+            of arbitrary <see cref="T:System.Object"/> values.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteStringArray(System.String[])">
+            <summary>
+            Writes a JSON array of JSON strings given an array of 
+            <see cref="T:System.String"/> values.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonWriter.WriteFromReader(Yunsoft.Json.JsonReader)">
+            <summary>
+            Writes the next value from the given <see cref="T:Yunsoft.Json.JsonReader"/>
+            into this writer's output. If the reader is positioned
+            at the root of JSON data, then the entire data will be
+            written.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonWriter.Depth">
+            <summary>
+            Return the current level of nesting as the writer encounters
+            nested objects and arrays.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonWriter.MaxDepth">
+            <summary>
+            Sets or returns the maximum allowed depth or level of nestings
+            of objects and arrays.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonWriter.Index">
+            <summary>
+            Return the current index within a JSON Array 
+            (also valid for a JSON Object but indicates member count).
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonWriter.Bracket">
+            <summary>
+            Determines the current bracket of the writer.
+            </summary>
+        </member>
+        <member name="E:Yunsoft.Json.JsonWriter.Disposed">
+            <summary>
+            Represents the method that handles the Disposed event of a reader.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonArray">
+            <summary>
+            An ordered sequence of values. This class also provides a number of
+            methods that can be found on a JavaScript Array for sake of parity.
+            </summary>
+            <remarks>
+            <para>
+            Public Domain 2002 JSON.org, ported to C# by Are Bjolseth (teleplan.no)
+            and re-adapted by Atif Aziz (www.raboof.com)</para>
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.ToString">
+            <summary>
+            Make an JSON external form string of this JsonArray. For
+            compactness, no unnecessary whitespace is added.
+            </summary>
+            <remarks>
+            This method assumes that the data structure is acyclical.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Export(Yunsoft.Json.JsonWriter)">
+            <summary>
+            Make an JSON external form string of this JsonArray. For
+            compactness, no unnecessary whitespace is added.
+            </summary>
+            <remarks>
+            This method assumes that the data structure is acyclical.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.ToArray">
+            <summary>
+            Copies the elements to a new object array.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.ToArray(System.Type)">
+            <summary>
+            Copies the elements to a new array of the specified type.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Push(System.Object)">
+            <summary>
+            Appends new elements to an array.
+            </summary>
+            <returns>
+            The new length of the array.
+            </returns>
+            <remarks>
+            This method appends elements in the order in which they appear. If
+            one of the arguments is an array, it is added as a single element.
+            Use the <see cref="M:Yunsoft.Json.JsonArray.Concat(System.Object[])"/> method to join the elements from two or
+            more arrays.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Push(System.Object[])">
+            <summary>
+            Appends new elements to an array.
+            </summary>
+            <returns>
+            The new length of the array.
+            </returns>
+            <remarks>
+            This method appends elements in the order in which they appear. If
+            one of the arguments is an array, it is added as a single element.
+            Use the <see cref="M:Yunsoft.Json.JsonArray.Concat(System.Object[])"/> method to join the elements from two or
+            more arrays.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Pop">
+            <summary>
+            Removes the last element from an array and returns it.
+            </summary>
+            <remarks>
+            If the array is empty, null is returned.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Concat(System.Object[])">
+            <summary>
+            Returns a new array consisting of a combination of two or more
+            arrays.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Shift">
+            <summary>
+            Removes the first element from an array and returns it.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Unshift(System.Object)">
+            <summary>
+            Inserts the specified element at the beginning of the array.
+            </summary>
+            <remarks>
+            The unshift method inserts elements into the start of an array, so
+            they appear in the same order in which they appear in the argument
+            list.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.Unshift(System.Object[])">
+            <summary>
+            Inserts the specified elements at the beginning of the array.
+            </summary>
+            <remarks>
+            The unshift method inserts elements into the start of an array, so
+            they appear in the same order in which they appear in the argument
+            list.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the elements
+            of the array.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonArray.CopyTo(System.Object[],System.Int32)">
+            <summary>
+            Copies the elements to an <see cref="T:System.Array"/>, 
+            starting at a particular given index.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonBuffer">
+            <summary>
+            Represent buffered JSON token data.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonBuffer.CreateReader">
+            <summary>
+            Creates a <see cref="T:Yunsoft.Json.JsonBufferReader"/> object that can be
+            used to read the content of the buffer.
+            </summary>
+            <remarks>
+            If the buffer contains a JSON null or scalar value then the
+            returned reader is already started and positioned on the value.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonBuffer.ToString">
+            <summary>
+            Returns the content of the buffer formatted as JSON text.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.Item(System.Int32)">
+            <summary>
+            Gets the token at the specified index.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.Length">
+            <summary>
+            Gets the number of tokens contained in the buffer.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsEmpty">
+            <summary>
+            Indicates whether the buffer is empty or not.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsNull">
+            <summary>
+            Indicates whether the buffer represents simply a JSON null or not.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsScalar">
+            <summary>
+            Indicates whether the buffer represents a JSON scalar value
+            (number, string or Boolean) or not.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsStructured">
+            <summary>
+            Indicates whether the buffer represents a JSON structured value,
+            that is, an array or object or not.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsObject">
+            <summary>
+            Indicates whether the buffer represents a JSON object or not.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonBuffer.IsArray">
+            <summary>
+            Indicates whether the buffer represents a JSON array or not.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonBufferReader">
+            <summary>
+            Represents a reader that provides fast, non-cached, forward-only 
+            access to a <see cref="T:Yunsoft.Json.JsonBuffer"/> object.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonReaderBase">
+            <summary>
+            Base implementation of <see cref="T:Yunsoft.Json.JsonReader"/> that can be used
+            as a starting point for sub-classes of <see cref="T:Yunsoft.Json.JsonReader"/>.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonReader">
+            <summary>
+            Represents a reader that provides fast, non-cached, forward-only 
+            access to JSON data. 
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.Read">
+            <summary>
+            Reads the next token and returns true if one was found.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.Close">
+            <summary>
+            Closes the reader and releases any underlying resources 
+            associated with the reader.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the state of the 
+            instance.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadToken(Yunsoft.Json.JsonTokenClass)">
+            <summary>
+            Reads the next token ensuring that it matches the specified 
+            token. If not, an exception is thrown.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadString">
+            <summary>
+            Reads the next token, ensures it is a String and returns its 
+            text. If the next token is not a String, then an exception
+            is thrown instead.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadBoolean">
+            <summary>
+            Reads the next token, ensures it is a Boolean and returns its 
+            value. If the next token is not a Boolean, then an exception 
+            is thrown instead.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadNumber">
+            <summary>
+            Reads the next token, ensures it is a Number and returns its 
+            text representation. If the next token is not a Number, then 
+            an exception is thrown instead.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadNull">
+            <summary>
+            Reads the next token, ensures it is a Null. If the next token 
+            is not a Null, then an exception is thrown instead.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.ReadMember">
+            <summary>
+            Reads the next token, ensures it is Member (of an object) and 
+            returns its text. If the next token is not a Member, then an 
+            exception is thrown instead.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.StepOut">
+            <summary>
+            Steps out of the current depth to the level immediately above. 
+            Usually this skips the current Object or Array being read, 
+            including all nested structures.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.Skip">
+            <summary>
+            Skips through the next item. If it is an Object or Array, then
+            the entire object or array is skipped. If it is a scalar value
+            then just that value is skipped. If the reader is on an object
+            member then the member and its value are skipped.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReader.MoveToContent">
+            <summary>
+            Ensures that the reader is positioned on content (a JSON value) 
+            ready to be read. If the reader is already aligned on the start
+            of a value then no further action is taken.
+            </summary>
+            <returns>Return true if content was found. Otherwise false to 
+            indicate EOF.</returns>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.Token">
+            <summary>
+            Gets the current token.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.TokenClass">
+            <summary>
+            Gets the class of the current token.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.Text">
+            <summary>
+            Gets the text of the current token.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.Depth">
+            <summary>
+            Return the current level of nesting as the reader encounters
+            nested objects and arrays.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.MaxDepth">
+            <summary>
+            Sets or returns the maximum allowed depth or level of nestings
+            of objects and arrays.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReader.EOF">
+            <summary>
+            Indicates whether the reader has reached the end of input source.
+            </summary>
+        </member>
+        <member name="E:Yunsoft.Json.JsonReader.Disposed">
+            <summary>
+            Represents the method that handles the Disposed event of a reader.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReaderBase.Read">
+            <summary>
+            Reads the next token and returns true if one was found.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonReaderBase.ReadTokenImpl">
+            <summary>
+            Reads the next token and returns it.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReaderBase.Token">
+            <summary>
+            Gets the current token.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReaderBase.Depth">
+            <summary>
+            Return the current level of nesting as the reader encounters
+            nested objects and arrays.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonReaderBase.MaxDepth">
+            <summary>
+            Sets or returns the maximum allowed depth or level of nestings
+            of objects and arrays.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonBufferReader.BufferValue">
+            <summary>
+            Buffers the value at which the reader is positioned.
+            </summary>
+            <returns>Returns a <see cref="T:Yunsoft.Json.JsonBuffer"/> object that holds
+            the buffered value.</returns>
+        </member>
+        <member name="T:Yunsoft.Json.JsonBufferStorage">
+            <summary>
+            Serves as the shared backing storage for <see cref="T:Yunsoft.Json.JsonBuffer"/> 
+            objects. A <see cref="T:Yunsoft.Json.JsonBuffer"/> object is merely a 
+            constrained view on an object of this type.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonBufferWriter">
+            <summary>
+            Represents a writer that provides a fast, non-cached, forward-only means of 
+            emitting JSON data info a memory.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonBufferWriter.GetBuffer">
+            <summary>
+            Gets the buffered JSON data.
+            </summary>
+            <returns>Returns a <see cref="T:Yunsoft.Json.JsonBuffer"/> object with the
+            written and buffered JSON data.</returns>
+            <remarks>
+            This method method auto-completes the JSON data if it has not 
+            been written in its entirety.
+            </remarks>
+        </member>
+        <member name="T:Yunsoft.Json.JsonNull">
+            <summary>
+            Represent the one and only representation of the "null" value in JSON.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonNumber">
+            <summary> 
+            Represents a JSON Number.  This class models a number as a string 
+            and only converts to a native numerical representation when needed 
+            and therefore told.  
+            </summary>
+            <remarks>
+            This class cannot be used to compare two numbers or perform
+            mathematical operations like addition and substraction without 
+            first converting to an actual native numerical data type.
+            Use <see cref="M:Yunsoft.Json.JsonNumber.LogicallyEquals(System.Object)"/> to test for equality.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonNumber.IsValid(System.String)">
+            <summary>
+            Determines if given text is a valid number per JSON grammar
+            described in RFC 4627.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonNumber.IsValid(System.String,System.Globalization.NumberStyles)">
+            <summary>
+            Determines if given text is a valid number per JSON grammar
+            described in RFC 4627. An additional parameter can be used
+            to specify whether leading and/or trailing white space should
+            be allowed or not.
+            </summary>
+            <remarks>
+            If whitespace is allowed then any whitespace as per Unicode
+            is permitted, which is a wider set than what, for example,
+            <see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite"/> and
+            <see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite"/> list in their
+            documentation.
+            </remarks>
+        </member>
+        <member name="T:Yunsoft.Json.JsonObject">
+            <summary>
+            An unordered collection of name/value pairs.
+            </summary>
+            <remarks>
+            <para>
+            Althought the collection should be considered unordered by the user, 
+            the implementation does internally try to remember the order in which 
+            the keys were added in order facilitate human-readability as in when
+            an instance is rendered as text.</para>
+            <para>
+            Public Domain 2002 JSON.org, ported to C# by Are Bjolseth (teleplan.no)
+            and re-adapted by Atif Aziz (www.raboof.com)</para>
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.#ctor(System.Collections.IDictionary)">
+            <summary>
+            Construct a JsonObject from a IDictionary
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.Accumulate(System.String,System.Object)">
+            <summary>
+            Accumulate values under a key. It is similar to the Put method except
+            that if there is already an object stored under the key then a
+            JsonArray is stored under the key to hold all of the accumulated values.
+            If there is already a JsonArray, then the new value is appended to it.
+            In contrast, the Put method replaces the previous value.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.Add(System.String,System.Object)">
+            <summary>
+            Adds a key/value pair to the JsonObject. If the key is already
+            present then an exception is thrown.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.Put(System.String,System.Object)">
+            <summary>
+            Put a key/value pair in the JsonObject. If the value is null,
+            then the key will be removed from the JsonObject if it is present.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.GetNamesArray">
+            <summary>
+            Produce a JsonArray containing the names of the elements of this
+            JsonObject.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.ToString">
+            <summary>
+            Overridden to return a JSON formatted object as a string.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonObject.Import(Yunsoft.Json.JsonReader)">
+            <remarks>
+            This method is not exception-safe. If an error occurs while 
+            reading then the object may be partially imported.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonString.Enquote(System.String)">
+            <summary>
+            Produces a string in double quotes with backslash sequences in all
+            the right places.
+            </summary>
+            <returns>A correctly formatted string for insertion in a JSON
+            message.
+            </returns>
+            <remarks>
+            Public Domain 2002 JSON.org, ported to C# by Are Bjolseth
+            (teleplan.no) and nearly re-written by Atif Aziz (www.raboof.com)
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonString.Dequote(Yunsoft.Json.BufferedCharReader,System.Char)">
+            <summary>
+            Return the characters up to the next close quote character.
+            Backslash processing is done. The formal JSON format does not
+            allow strings in single quotes, but an implementation is allowed to
+            accept them.
+            </summary>
+            <param name="quote">The quoting character, either " or '</param>
+            <returns>A String.</returns>
+        </member>
+        <member name="M:Yunsoft.Json.JsonString.ParseHex(Yunsoft.Json.BufferedCharReader,System.Char[])">
+            <summary>
+            Eats the next four characters, assuming hex digits, and converts
+            into the represented character value.
+            </summary>
+            <returns>The parsed character.</returns>
+        </member>
+        <member name="T:Yunsoft.Json.JsonText">
+            <summary>
+            Facade for working with JsonReader and JsonWriter implementations
+            that work with JSON text.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.JsonTextReader">
+            <summary>
+            Represents a reader that provides fast, non-cached, forward-only 
+            access to JSON data over JSON text (RFC 4627). 
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ReadTokenImpl">
+            <summary>
+            Reads the next token and returns it.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.Parse">
+            <summary>
+            Parses the next token from the input and returns it.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ParseArray">
+            <summary>
+            Parses expecting an array in the source.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ParseArrayFirst">
+            <summary>
+            Parses the first element of an array or the end of the array if
+            it is empty.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ParseArrayNext">
+            <summary>
+            Parses the next element in the array.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ParseObject">
+            <summary>
+            Parses expecting an object in the source.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.ParseObjectMember">
+            <summary>
+            Parses the first member name of the object or the end of the array
+            in case of an empty object.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.Yield(Yunsoft.Json.JsonToken)">
+            <summary> 
+            Yields control back to the reader's user while updating the
+            reader with the new found token and its text.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.Yield(Yunsoft.Json.JsonToken,Yunsoft.Json.JsonTextReader.Continuation)">
+            <summary> 
+            Yields control back to the reader's user while updating the
+            reader with the new found token, its text and the next 
+            continuation point into the reader.
+            </summary>
+            <remarks>
+            By itself, this method cannot affect the stack such tha control 
+            is returned back to the reader's user. This must be done by 
+            Yield's caller by way of explicit return.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.JsonTextReader.NextClean">
+            <summary>
+            Get the next char in the string, skipping whitespace
+            and comments (slashslash and slashstar).
+            </summary>
+            <returns>A character, or 0 if there are no more characters.</returns>
+        </member>
+        <member name="T:Yunsoft.Json.JsonTextWriter">
+            <summary>
+            Represents a writer that provides a fast, non-cached, forward-only means of 
+            emitting JSON data formatted as JSON text (RFC 4627).
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonToken.Class">
+            <summary>
+            Gets the class/type/category of the token.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Json.JsonToken.Text">
+            <summary>
+            Gets the current token text, if applicable, otherwise null.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.Reflection.Reflector.IsConstructionOfNullable(System.Type)">
+            <summary>
+            Determines if type is a constructed type of <see cref="T:System.Nullable`1"/>.
+            </summary>
+            
+        </member>
+        <member name="M:Yunsoft.Json.Reflection.Reflector.IsConstructionOfGenericTypeDefinition(System.Type,System.Type)">
+            <summary>
+            Determines if type is a constructed type of generic type definition.
+            For example, this method can be used to test if <see cref="T:System.Nullable`1"/> 
+            of <see cref="T:System.Int32"/> is indeed a construction of the generic type definition 
+            <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="type"/> or <paramref name="genericTypeDefinition"/> 
+            is a null reference.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The type identified by <paramref name="genericTypeDefinition"/> is not
+            a generic type definition.
+            </exception>
+        </member>
+        <member name="M:Yunsoft.Json.Reflection.Reflector.IsTupleFamily(System.Type)">
+            <summary>
+            Determines if a type is one of the generic <see cref="T:System.Tuple"/> family
+            of types.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Json.DictionaryHelper">
+            <summary> 
+            Helper methods for dictionaries. This type supports the
+            Yunsoft infrastructure and is not intended to be used directly from
+            your code. 
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.UnixTime.ToDateTime(System.Double)">
+            <summary>
+            Converts Unix time (UTC) into a DateTime instance that 
+            represents the same time in local time with a maximum
+            precision of a milliseconds.
+            </summary>
+            <remarks>
+            This method works with time expressed up through 
+            23:59:59, December 31, 3000, UTC.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.UnixTime.ToDateTime(System.Int64)">
+            <summary>
+            Converts Unix time (UTC) into a DateTime instance that 
+            represents the same time in local time with a maximum
+            precision of a second.
+            </summary>
+            <remarks>
+            This method works with time expressed up through 
+            23:59:59, December 31, 3000, UTC.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.UnixTime.ToDateTime(System.Int64,System.Int32)">
+            <summary>
+            Converts a 64-bit Unix time (UTC) into a DateTime instance that
+            represents the same time in local time (precision can be a second
+            or a millisecond depending on whether the second parameter is 
+            zero or not).
+            </summary>
+            <remarks>
+            See <a href="http://en.wikipedia.org/wiki/Unix_time">Unix time on Wikipedia</a>
+            for more information. This method works with time expressed 
+            up through 23:59:59, December 31, 3000, UTC.
+            </remarks>
+        </member>
+        <member name="M:Yunsoft.Json.UnixTime.ToInt64(System.DateTime)">
+            <summary>
+            Converts a DateTime instance (assumed to represent local time)
+            to Unix time (UTC) with a maximum precision of a second.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Json.UnixTime.ToDouble(System.DateTime)">
+            <summary>
+            Converts a DateTime instance (assumed to represent local time)
+            to Unix time (UTC) with a precision of over a second (i.e.
+            fractional part of the returned float-point value is fractions
+            of a second).
+            </summary>
+        </member>
+    </members>
+</doc>

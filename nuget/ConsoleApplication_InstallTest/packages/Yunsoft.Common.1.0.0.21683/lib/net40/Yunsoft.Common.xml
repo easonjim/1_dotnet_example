@@ -1,0 +1,3742 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yunsoft.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Yunsoft.Common.DEncrypt.AESHelper">
+            <summary>
+            对称加密解密
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.AESHelper.Encrypt(System.String)">
+            <summary>
+            加密，使用缺省key,iv
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.AESHelper.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="toEncrypt"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.AESHelper.Decrypt(System.String)">
+            <summary>
+            解密，使用缺省key,iv
+            </summary>
+            <param name="toDecrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.AESHelper.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="toDecrypt"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.MD5Helper.Create(System.String)">
+            <summary>
+            MD5加密，小写
+            </summary>
+            <param name="original">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="T:Yunsoft.Common.Log.Log">
+            <summary>
+            日志相关的操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Log.Log.LoginLog(System.String,System.String)">
+            <summary>
+            登录时，日志写入到文件中
+            </summary>
+            <param name="text">日志内容</param>
+            <param name="Path">绝对目录</param>
+        </member>
+        <!-- 对于成员“M:Yunsoft.Common.Log.Log.OperationLog(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Yunsoft.Common.Log.Log.tryCLog(System.String,System.String)">
+            <summary>
+            异常时，日志写入到文件中
+            </summary>
+            <param name="text">日志内容</param>
+            <param name="Path">绝对目录</param>
+        </member>
+        <member name="M:Yunsoft.Common.Log.LogHelp.LoginLog(System.String,System.String)">
+            <summary>
+            登录时，日志写入到文件中
+            </summary>
+            <param name="text">日志内容</param>
+            <param name="Path">绝对目录</param>
+        </member>
+        <member name="M:Yunsoft.Common.Log.LogHelp.OperationLog(System.String,System.String)">
+            <summary>
+            操作时，日志写入到文件中
+            </summary>
+            <param name="text">日志内容</param>
+            <param name="Path">绝对目录</param>
+        </member>
+        <member name="M:Yunsoft.Common.Log.LogHelp.tryCLog(System.String,System.String)">
+            <summary>
+            异常时，日志写入到文件中
+            </summary>
+            <param name="text">日志内容</param>
+            <param name="Path">绝对目录</param>
+        </member>
+        <member name="T:Yunsoft.Common.TreeDataHelper">
+             <summary> 
+            TreeDataHelper 的摘要说明 
+             </summary> 
+        </member>
+        <member name="M:Yunsoft.Common.TreeDataHelper.GetTreeData(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String)">
+            <summary> 
+            生成树形结构的DataTable 
+            </summary> 
+            <param name="datatable">原始数据表</param> 
+            <param name="parentField">上级节点关键字段</param> 
+            <param name="parentValue">上级节点值</param> 
+            <param name="keyField">本节点关键字段</param> 
+            <param name="textField">显示的文本字段</param> 
+            <param name="sortString">排序字符串</param> 
+            <returns>处理后的DataTable</returns> 
+        </member>
+        <member name="M:Yunsoft.Common.TreeDataHelper.resetTextField(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary> 
+            递归生成新的节点名称(带连接线) 
+            </summary> 
+            <param name="parentValueField">上级节点关键字段</param> 
+            <param name="parentValue">上级节点值</param> 
+            <param name="keyField">本节点关键字段</param> 
+            <param name="textField">显示出来的文本字段</param> 
+            <param name="sortString">排序字符串</param> 
+            <param name="level">树深度</param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Yunsoft.Common.TreeDataHelper.getTreeLine(System.String,System.String,System.String,System.String,System.String)">
+            <summary> 
+            回溯生成树的连接线 
+            </summary> 
+            <param name="parentValueField">上级节点关键字段</param> 
+            <param name="parentValue">上级节点值</param> 
+            <param name="keyField">本节点关键字段</param> 
+            <param name="nodeKey">本节点值</param> 
+            <param name="sortString">排序字符串</param> 
+            <returns></returns> 
+        </member>
+        <member name="T:Yunsoft.Common.ComparerFactroy`1">
+            <summary>
+            Common Comaparer Generate Class, supported 4 paramers limitted
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Yunsoft.Common.DataTableTools.DataTableIsNull(System.Data.DataTable)">
+            <summary>
+            判断DataTable是否为Null
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.JsDecompress(System.Byte[])">
+            <summary>
+            GZip解压函数
+            </summary>
+            <remarks>针对JavaScript混合压缩算法</remarks>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.JsCompress(System.Byte[])">
+            <summary>
+            GZip压缩函数
+            </summary>
+            <remarks>针对JavaScript混合压缩算法</remarks>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.DeflateDecompress(System.String)">
+            <summary>
+            Deflate解压函数
+            JS:var details = eval('(' + utf8to16(zip_depress(base64decode(hidEnCode.value))) + ')')对应的C#压缩方法
+            </summary>
+            <remarks>针对JavaScript混合压缩算法</remarks>
+            <param name="strSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.DeflateCompress(System.String)">
+            <summary>
+            Deflate压缩函数
+            </summary>
+            <remarks>针对JavaScript混合压缩算法</remarks>
+            <param name="strSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.Compress(System.String)">
+            <summary>
+            压缩字符串
+            </summary>
+            <param name="context">要压缩的内容</param>
+            <returns>使用base64的方式输出压缩后的内容</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.Compress(System.Byte[])">
+            <summary>
+            压缩二进制
+            </summary>
+            <param name="context">要压缩的内容</param>
+            <returns>输出压缩后的内容</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.Decompress(System.String)">
+            <summary>
+            解压一个base64格式的字符串
+            </summary>
+            <param name="context">内容</param>
+            <returns>返回解压后的内容</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.GZip.Decompress(System.Byte[])">
+            <summary>
+            解压二进制
+            </summary>
+            <param name="context">内容</param>
+            <returns>返回解压后的内容</returns>
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.Hex16">
+            <summary>
+            16进制可逆操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Hex16.Encode(System.String)">
+            <summary>
+            作用：将字符串内容转化为16进制数据编码，其逆过程是Decode
+            参数说明：
+            strEncode 需要转化的原始字符串
+            转换的过程是直接把字符转换成Unicode字符,比如数字"3"-->0033,汉字"我"-->U+6211
+            函数decode的过程是encode的逆过程.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Hex16.Decode(System.String)">
+            <summary>
+            作用：将16进制数据编码转化为字符串，是Encode的逆过程
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Hex16.EncodeForNum(System.Int32)">
+            <summary>
+            将数字转换成16进制字符串，后两位加入随机字符，其可逆方法为DecodeForNum
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Hex16.DecodeForNum(System.String)">
+            <summary>
+            解密16进制字符串，此方法只适合后面两位有随机字符的
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.Base64">
+            <summary>
+            Base64可逆操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Base64.Decode4Url(System.String)">
+            <summary>
+            从适用于URL的Base64编码字符串转换为普通字符串
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.Base64.Encode4Url(System.String)">
+            <summary>
+            从普通字符串转换为适用于URL的Base64编码字符串
+            </summary>
+        </member>
+        <!-- 对于成员“T:Yunsoft.Common.EnumManager`1”忽略有格式错误的 XML 注释 -->
+        <member name="M:Yunsoft.Common.EnumManager`1.GetEnumDictionary">
+            <summary>
+            获取枚举
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.EnumManager`1.Bind_Enum_Control(System.Web.UI.WebControls.ListControl)">
+            <summary>
+            传入控件进行绑定
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:Yunsoft.Common.EnumManager`1.GetEnumValue(System.Int32)">
+            <summary>
+            通过key获取Enum的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.Cookies">
+            <summary>
+            Cookies封装操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Cookies.getCookie(System.String,System.String)">
+            <summary>
+            获取Cookie
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Cookies.setCookie(System.String,System.String,System.Double)">
+            <summary>
+            设置Cookie
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="time">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Cookies.updateCookies(System.String,System.String,System.Double)">
+            <summary>
+            更新Cookie
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="time">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.FileManage">
+            <summary>
+            文件操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.MoveFile(System.String,System.String,System.String)">
+            <summary>
+            移动文件
+            </summary>
+            <param name="oldPath">源文件路径</param>
+            <param name="newPath">目标文件路径</param>
+            <param name="fileName">文件名称</param>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.MoveFile(System.String,System.String,System.Collections.ArrayList)">
+            <summary>
+            批量移动文件
+            </summary>
+            <param name="oldPath">源文件路径</param>
+            <param name="newPath">目标文件路径</param>
+            <param name="fileNameList">文件名称</param>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">文件路径</param>
+            <returns>删除结果，成功或失败</returns>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.DeleteFolder(System.String)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="path">文件夹路径</param>
+            <returns>删除结果，成功或失败</returns>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.MoveFolder(System.String,System.String)">
+            <summary>
+            移动文件夹
+            </summary>
+            <param name="oldPath">源文件夹路径</param>
+            <param name="newPath">目标文件夹路径</param>
+            <returns>移动结果</returns>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.IsSafeName(System.String)">
+            <summary>
+            判断是否为安全文件名
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.IsUnsafeName(System.String)">
+            <summary>
+             判断是否为不安全文件名
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.IsCanEdit(System.String)">
+            <summary>
+             判断是否为可编辑文件
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FileManage.GetWebAssemblyPath">
+            <summary>
+            获取Assembly的运行路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.FormulaCalculator">
+            <summary>
+            表达式解析以及运算类
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.FormulaCalculator.MAX_LEVEL">
+            <summary>
+            最高运算级别常量
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.GetOperatorLevel(System.String)">
+            <summary>
+            获取运算符的级别
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.GetOperator(System.String)">
+            <summary>
+            如果字符串是已运算符开头,则返回该运算符,否则返回null
+            </summary>
+            <param name="v">要检查的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="F:Yunsoft.Common.FormulaCalculator._opt">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.FormulaCalculator._expression">
+            <summary>
+            运算符右边的表达式
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.FormulaCalculator._leftValue">
+            <summary>
+            运算符左边的值
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.Initialize">
+            <summary>初始化对象(将表达式拆分为左边的值、运算符和右边的表达式)</summary>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.GetNext(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            拆分表达式
+            </summary>
+            <param name="expression">表达式</param>
+            <param name="left">左边的值</param>
+            <param name="opt">运算符</param>
+            <param name="right">右边的值</param>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.Calculate">
+            <summary>
+            计算表达式
+            </summary>
+            <returns>返回值(可能有多个,如逗号表达式会返回多个值)</returns>
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.CalculateFunction">
+            <summary>计算函数(括号运算符被当作函数计算,所有的函数必须已右括号结尾)</summary>        
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.GetIndex(System.String)">
+            <summary>
+            获取第一个未封闭的右括号在字符串中的位置
+            </summary>
+            <param name="expression">传入的字符串</param>        
+        </member>
+        <member name="M:Yunsoft.Common.FormulaCalculator.CalculateTwoParms">
+            <summary>计算四则表达式</summary>
+        </member>
+        <member name="T:Yunsoft.Common.ConfigHelper">
+            <summary>
+            web.config操作类
+            Copyright (C) 
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.ConfigHelper.GetConfigString(System.String)">
+            <summary>
+            得到AppSettings中的配置字符串信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.ConfigHelper.GetExeConfigString(System.String)">
+            <summary>
+            得到exe AppSettings中的配置字符串信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.ConfigHelper.GetConfigBool(System.String)">
+            <summary>
+            得到AppSettings中的配置Bool信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.ConfigHelper.GetConfigDecimal(System.String)">
+            <summary>
+            得到AppSettings中的配置Decimal信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.ConfigHelper.GetConfigInt(System.String)">
+            <summary>
+            得到AppSettings中的配置int信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.DataCache">
+            <summary>
+            缓存相关的操作类
+            Copyright (C)     
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DataCache.GetCache(System.String)">
+            <summary>
+            获取当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="CacheKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DataCache.SetCache(System.String,System.Object)">
+            <summary>
+            设置当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="CacheKey"></param>
+            <param name="objObject"></param>
+        </member>
+        <member name="M:Yunsoft.Common.DataCache.SetCache(System.String,System.Object,System.DateTime,System.TimeSpan)">
+            <summary>
+            设置当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="CacheKey"></param>
+            <param name="objObject"></param>
+        </member>
+        <member name="M:Yunsoft.Common.DataCache.DeleteCache(System.String)">
+            <summary>
+            删除当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="CacheKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.DataConversion">
+            <summary>
+            导出excel表格
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DataConversion.DataTableToExcel(System.Data.DataTable,System.String)">
+            <summary>
+            导出EXECL 表格
+            </summary>
+            <param name="dt"></param>
+            <param name="excelPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DataConversion.ExcelToDS(System.String)">
+            <summary> 
+            读取Excel文档 
+            </summary> 
+            <param name="Path">文件名称</param> 
+            <returns>返回一个数据集</returns> 
+        </member>
+        <member name="T:Yunsoft.Common.DataSetTools">
+            <summary>
+            DataSet工具处理类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DataSetTools.GetDataSetRows(System.Data.DataSet)">
+            <summary>
+            从DataSet获取所有行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DataSetTools.DataSetIsNull(System.Data.DataSet)">
+            <summary>
+            判断DataSet是否为Null
+            </summary>
+            <param name="ds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.DEncrypt">
+            <summary>
+            Encrypt 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Encrypt(System.String)">
+            <summary>
+            使用缺省密钥字符串加密string
+            </summary>
+            <param name="original">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Decrypt(System.String)">
+            <summary>
+            使用缺省密钥字符串解密string
+            </summary>
+            <param name="original">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            使用给定密钥字符串加密string
+            </summary>
+            <param name="original">原始文字</param>
+            <param name="key">密钥</param>
+            <param name="encoding">字符编码方案</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            使用给定密钥字符串解密string
+            </summary>
+            <param name="original">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Decrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            使用给定密钥字符串解密string,返回指定编码方式明文
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <param name="encoding">字符编码方案</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Decrypt(System.Byte[])">
+            <summary>
+            使用缺省密钥字符串解密byte[]
+            </summary>
+            <param name="encrypted">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Encrypt(System.Byte[])">
+            <summary>
+            使用缺省密钥字符串加密
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.MakeMD5(System.Byte[])">
+            <summary>
+            生成MD5摘要
+            </summary>
+            <param name="original">数据源</param>
+            <returns>摘要</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.GetMD5FromStr(System.String)">
+            <summary>
+            生成MD5加密字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用给定密钥加密
+            </summary>
+            <param name="original">明文</param>
+            <param name="key">密钥</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DEncrypt.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用给定密钥解密数据
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.DESEncrypt">
+            <summary>
+            DES加密/解密类。
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Encrypt(System.String,System.String@,System.String@)">
+            <summary> 
+            加密数据 
+            </summary> 
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Decrypt(System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.DESEncrypt.Decrypt(System.String,System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.HashEncode">
+            <summary>
+            得到随机安全码（哈希加密）。
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.HashEncode.GetSecurity">
+            <summary>
+            得到随机哈希加密字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.HashEncode.GetRandomValue">
+            <summary>
+            得到一个随机数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.HashEncode.HashEncoding(System.String)">
+            <summary>
+            哈希加密一个字符串
+            </summary>
+            <param name="Security"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.DEncrypt.RSACryption">
+            <summary> 
+            RSA加密解密及RSA签名和验证
+            </summary> 
+        </member>
+        <member name="M:Yunsoft.Common.DEncrypt.RSACryption.RSAKey(System.String@,System.String@)">
+            <summary>
+            RSA 的密钥产生 产生私钥 和公钥 
+            </summary>
+            <param name="xmlKeys"></param>
+            <param name="xmlPublicKey"></param>
+        </member>
+        <member name="T:Yunsoft.Common.EnumFormula">
+            <summary>
+            EnumFormula
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.FormulaDeal">
+            <summary>
+            FormulaDeal
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.DOMAIN_RULES">
+            <summary>
+            域名后缀规则
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.COOKIEKEY_WECHATOPENID">
+            <summary>
+            微信openid cookie key
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.PAY_SECURITY_CODE">
+            <summary>
+            站内订单支付密钥
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.PAY_BALANCE_PAYMENTMODEID">
+            <summary>
+            余额支付接口ID
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_ADMIN">
+            <summary>
+            Admin后台SessionKey
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_ENTERPRISE">
+            <summary>
+            企业后台SessionKey
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_SUPPLIER">
+            <summary>
+            供应商后台SessionKey
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_SALES">
+            <summary>
+            业务员用户
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_AGENTS">
+            <summary>
+            代理商后台SessionKey
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.SESSIONKEY_USER">
+            <summary>
+            用户后台SessionKey
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Globals.POINT_RATIO">
+            <summary>
+            积分比例
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Globals.SafeEnum``1(System.String,``0)">
+            <summary>
+            将枚举数值or枚举名称 安全转换为枚举对象
+            </summary>
+            <typeparam name="T">枚举类型</typeparam>
+            <param name="value">数值or名称</param>
+            <param name="defaultValue">默认值</param>
+            <remarks>转换区分大小写</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Globals.SafeEnum``1(System.String,``0,System.Boolean)">
+            <summary>
+            将枚举数值or枚举名称 安全转换为枚举对象
+            </summary>
+            <typeparam name="T">枚举类型</typeparam>
+            <param name="value">数值or名称</param>
+            <param name="defaultValue">默认值</param>
+            <param name="ignoreCase">是否忽略大小写 true 不区分大小写 | false 区分大小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Globals.GetPagedTable(System.Data.DataTable,System.Int32,System.Int32)">
+            <summary>
+            DataTable分页
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="PageIndex">页索引,注意：从1开始</param>
+            <param name="PageSize">每页大小</param>
+            <returns>分好页的DataTable数据</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Globals.PageCount(System.Int32,System.Int32)">
+            <summary>
+            返回分页的页数
+            </summary>
+            <param name="count">总条数</param>
+            <param name="pageye">每页显示多少条</param>
+            <returns>如果 结尾为0：则返回1</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Globals.GetTopLevelDomain(System.String)">
+            <summary>
+            解析顶级域名
+            </summary>
+            <param name="domain">域名</param>
+            <returns>如域名是IP此属性值不包括端口号</returns>
+        </member>
+        <member name="P:Yunsoft.Common.Globals.IsPublicSession">
+            <summary>
+            所有后台共享Session
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Globals.ClientIP">
+            <summary>
+            获取当前请求的客户端IP
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Globals.DomainName">
+            <summary>
+            获取此实例的主机部分
+            </summary>
+            <remarks>此属性值不包括端口号</remarks>
+        </member>
+        <member name="P:Yunsoft.Common.Globals.DomainFullName">
+            <summary>
+            获取服务器的域名系统 (DNS) 主机名或 IP 地址和端口号
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Globals.TopLevelDomain">
+            <summary>
+            获取顶级域名
+            </summary>
+            <remarks>如域名是IP此属性值不包括端口号</remarks>
+        </member>
+        <member name="T:Yunsoft.Common.UploadEventArgs">
+            <summary>    
+            上传数据参数    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.UploadEventArgs.BytesSent">
+            <summary>    
+            已发送的字节数    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.UploadEventArgs.TotalBytes">
+            <summary>    
+            总字节数    
+            </summary>    
+        </member>
+        <member name="T:Yunsoft.Common.DownloadEventArgs">
+            <summary>    
+            下载数据参数    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.DownloadEventArgs.BytesReceived">
+            <summary>    
+            已接收的字节数    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.DownloadEventArgs.TotalBytes">
+            <summary>    
+            总字节数    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.DownloadEventArgs.ReceivedData">
+            <summary>    
+            当前缓冲区接收的数据    
+            </summary>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.#ctor">
+            <summary>    
+            创建WebClient的实例    
+            </summary>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.GetHtml(System.String)">
+            <summary>    
+             获取网页源代码    
+            </summary>    
+            <param name="url">网址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.DownloadFile(System.String,System.String)">
+            <summary>    
+            下载文件    
+            </summary>    
+            <param name="url">文件URL地址</param>    
+            <param name="filename">文件保存完整路径</param>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.GetData(System.String)">
+            <summary>    
+            从指定URL下载数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.Post(System.String,System.String)">
+            <summary>    
+            向指定URL发送文本数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="postData">urlencode编码的文本数据</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.Post(System.String,System.Byte[])">
+            <summary>    
+            向指定URL发送字节数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="postData">发送的字节数组</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.Post(System.String,Yunsoft.Common.MultipartForm)">
+            <summary>    
+            向指定网址发送mulitpart编码的数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="mulitpartForm">mulitpart form data</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.GetData(System.Net.HttpWebRequest)">
+            <summary>    
+            读取请求返回的数据    
+            </summary>    
+            <param name="request">请求对象</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.PostData(System.Net.HttpWebRequest,System.Byte[])">
+            <summary>    
+            发送请求数据    
+            </summary>    
+            <param name="request">请求对象</param>    
+            <param name="postData">请求发送的字节数组</param>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.CreateRequest(System.String,System.String)">
+            <summary>    
+            创建HTTP请求    
+            </summary>    
+            <param name="url">URL地址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.SaveCookiesToDisk">
+            <summary>    
+            将Cookie保存到磁盘    
+            </summary>    
+        </member>
+        <member name="M:Yunsoft.Common.WebClient.LoadCookiesFromDisk">
+            <summary>    
+            从磁盘加载Cookie    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.BufferSize">
+            <summary>    
+            设置发送和接收的数据缓冲大小    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.ResponseHeaders">
+            <summary>    
+            获取响应头集合    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.RequestHeaders">
+            <summary>    
+            获取请求头集合    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.Proxy">
+            <summary>    
+            获取或设置代理    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.Encoding">
+            <summary>    
+            获取或设置请求与响应的文本编码方式    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.RespHtml">
+            <summary>    
+            获取或设置响应的html代码    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.WebClient.CookieContainer">
+            <summary>    
+            获取或设置与请求关联的Cookie容器    
+            </summary>    
+        </member>
+        <member name="T:Yunsoft.Common.MultipartForm">
+            <summary>    
+            对文件和文本数据进行Multipart形式的编码    
+            </summary>    
+        </member>
+        <member name="M:Yunsoft.Common.MultipartForm.#ctor">
+            <summary>    
+            实例化    
+            </summary>    
+        </member>
+        <member name="M:Yunsoft.Common.MultipartForm.AddFlie(System.String,System.String)">
+            <summary>    
+            添加一个文件    
+            </summary>    
+            <param name="name">文件域名称</param>    
+            <param name="filename">文件的完整路径</param>    
+        </member>
+        <member name="M:Yunsoft.Common.MultipartForm.AddFlie(System.String,System.String,System.Byte[],System.Int32)">
+            <summary>    
+            添加一个文件    
+            </summary>    
+            <param name="name">文件域名称</param>    
+            <param name="filename">文件名</param>    
+            <param name="fileData">文件二进制数据</param>    
+            <param name="dataLength">二进制数据大小</param>    
+        </member>
+        <member name="M:Yunsoft.Common.MultipartForm.AddString(System.String,System.String)">
+            <summary>    
+            添加字符串    
+            </summary>    
+            <param name="name">文本域名称</param>    
+            <param name="value">文本值</param>    
+        </member>
+        <member name="M:Yunsoft.Common.MultipartForm.GetContentType(System.String)">
+            <summary>    
+            从注册表获取文件类型    
+            </summary>    
+            <param name="filename">包含扩展名的文件名</param>    
+            <returns>如：application/stream</returns>    
+        </member>
+        <member name="P:Yunsoft.Common.MultipartForm.FormData">
+            <summary>    
+            获取编码后的字节数组    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.MultipartForm.ContentType">
+            <summary>    
+            获取此编码内容的类型    
+            </summary>    
+        </member>
+        <member name="P:Yunsoft.Common.MultipartForm.StringEncoding">
+            <summary>    
+            获取或设置对字符串采用的编码类型    
+            </summary>    
+        </member>
+        <member name="T:Yunsoft.Common.INIFile">
+            <summary>
+            INI文件读写类。
+            Copyright (C)     
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.INIFile.IniWriteValue(System.String,System.String,System.String)">
+            <summary>
+            写INI文件
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:Yunsoft.Common.INIFile.IniReadValue(System.String,System.String)">
+            <summary>
+            读取INI文件
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.INIFile.ClearAllSection">
+            <summary>
+            删除ini文件下所有段落
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.INIFile.ClearSection(System.String)">
+            <summary>
+            删除ini文件下personal段落下的所有键
+            </summary>
+            <param name="Section"></param>
+        </member>
+        <member name="T:Yunsoft.Common.InjectionFilter">
+            <summary>
+             防注入类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.InjectionFilter.Filter(System.String)">
+            <summary>
+             防注入过滤函数
+            </summary>
+            <param name="inputString">需要过滤字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:Yunsoft.Common.InjectionFilter.HtmlFilter(System.String)">
+            <summary>
+            过滤全部HTML(富文本)内容
+            </summary>
+            <returns>纯文本</returns>
+        </member>
+        <!-- 对于成员“M:Yunsoft.Common.InjectionFilter.XSSFilter(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Yunsoft.Common.InjectionFilter.FlashFilter(System.String)">
+            <summary>
+             过滤字符串中注入Flash代码
+            </summary>
+            <param name="htmlCode">输入字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:Yunsoft.Common.InjectionFilter.SqlFilter(System.String)">
+            <summary>
+             过滤字符串中注入SQL脚本的方法
+            </summary>
+            <param name="source">传入的字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:Yunsoft.Common.InjectionFilter.QuoteFilter(System.String)">
+            <summary>
+            过滤字符串中的引号(最低级防注入)
+            </summary>
+            <param name="source">传入的字符串</param>
+            <returns>过滤后的字符串</returns>
+            <remarks>如非特殊需求, 不建议使用此方法</remarks>
+        </member>
+        <member name="T:Yunsoft.Common.MailSender">
+            <summary>
+             邮件发送类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.MailSender.Send(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Text.Encoding,System.Boolean,System.Boolean,System.Int32,System.String[])">
+            <summary>
+            发送邮件新方法
+            </summary>
+            <param name="server">邮件服务器地址</param>
+            <param name="port">端口</param>
+            <param name="username">用户名，和发送邮件一致</param>
+            <param name="password">密码</param>
+            <param name="frommail">发送邮件</param>
+            <param name="tomail">接受邮件</param>
+            <param name="ccmail">抄送</param>
+            <param name="bccmail">密送</param>
+            <param name="subject">主题</param>
+            <param name="body">内容</param>
+            <param name="isBodyHtml">是否为html格式</param>
+            <param name="encoding">编码方式</param>
+            <param name="isUseDefaultCredentials">发送认证消息，默认为true</param>
+            <param name="isSsl">是否为ssl</param>
+            <param name="timeOut">超时时间</param>
+            <param name="files">附件</param>
+        </member>
+        <member name="M:Yunsoft.Common.MailSender.Send(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Text.Encoding,System.Boolean,System.Boolean,System.String[])">
+            <summary>
+            重载发送邮件的方法（增加邮件的回复地址）
+            </summary>
+            <param name="server"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="frommail"></param>
+            <param name="tomail"></param>
+            <param name="ccmail"></param>
+            <param name="bccmail"></param>
+            <param name="replymail"></param>
+            <param name="subject"></param>
+            <param name="body"></param>
+            <param name="isBodyHtml"></param>
+            <param name="encoding"></param>
+            <param name="isAuthentication"></param>
+            <param name="isSsl"></param>
+            <param name="files"></param>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.ConnectCommand">
+            <summary>
+            Performs the connect to a Pop3 server and returns a Pop3 
+            response indicating the attempt to connect results and the
+            network stream to use for all subsequent Pop3 Commands.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Command`1">
+            <summary>
+            This class represents a generic Pop3 command and 
+            encapsulates the major operations when executing a
+            Pop3 command against a Pop3 Server.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.#ctor(System.IO.Stream,System.Boolean,Yunsoft.Common.Mail.Pop3State)">
+            <summary>
+            Initializes a new instance of the <see cref="!:Pop3CommandBase"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="isMultiline">if set to <c>true</c> [is multiline].</param>
+            <param name="validExecuteState">State of the valid execute.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.CreateRequestMessage">
+            <summary>
+            Abstract method intended for inheritors to 
+            build out the byte[] request message for 
+            the specific command.
+            </summary>
+            <returns>The byte[] containing the request message.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.Send(System.Byte[])">
+            <summary>
+            Sends the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.Execute(Yunsoft.Common.Mail.Pop3State)">
+            <summary>
+            Executes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.EnsurePop3State(Yunsoft.Common.Mail.Pop3State)">
+            <summary>
+            Ensures the state of the POP3.
+            </summary>
+            <param name="currentState">State of the current.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>The <c>Pop3Response</c> containing the results of the
+            Pop3 command execution.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.GetResponse">
+            <summary>
+            Gets the response.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.Receive(System.AsyncCallback)">
+            <summary>
+            Receives the specified callback.
+            </summary>
+            <param name="callback">The callback.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.WriteReceivedBytesToBuffer(System.Int32)">
+            <summary>
+            Writes the received bytes to buffer.
+            </summary>
+            <param name="bytesReceived">The bytes received.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.GetSingleLineResponseCallback(System.IAsyncResult)">
+            <summary>
+            Gets the single line response callback.
+            </summary>
+            <param name="ar">The ar.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.GetMultiLineResponseCallback(System.IAsyncResult)">
+            <summary>
+            Gets the multi line response callback.
+            </summary>
+            <param name="ar">The ar.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.GetRequestMessage(System.String[])">
+            <summary>
+            Gets the request message.
+            </summary>
+            <param name="args">The args.</param>
+            <returns>A byte[] request message to send to the host.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.StripPop3HostMessage(System.Byte[],System.String)">
+            <summary>
+            Strips the POP3 host message.
+            </summary>
+            <param name="bytes">The bytes.</param>
+            <param name="header">The header.</param>
+            <returns>A <c>MemoryStream</c> without the Pop3 server message.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Command`1.GetResponseLines(System.IO.MemoryStream)">
+            <summary>
+            Gets the response lines.
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns>A string[] of Pop3 response lines.</returns>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Command`1.IsMultiline">
+            <summary>
+            Sets a value indicating whether this instance is multiline.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is multiline; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ConnectCommand.#ctor(System.Net.Sockets.TcpClient,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.ConnectCommand"/> class.
+            </summary>
+            <remarks>
+            Even though a network stream is provided to the base constructor the stream
+            does not already exist so we have to send in a dummy stream until the actual
+            connect has taken place.  Then we'll reset network stream to the 
+            stream made available by the TcpClient.GetStream() to read the data returned
+            after a connect.
+            </remarks>
+            <param name="client">The client.</param>
+            <param name="hostname">The hostname.</param>
+            <param name="port">The port.</param>
+            <param name="useSsl">if set to <c>true</c> [use SSL].</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ConnectCommand.CreateRequestMessage">
+            <summary>
+            Creates the connect request message.
+            </summary>
+            <returns>A byte[] containing connect request message.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ConnectCommand.Execute(Yunsoft.Common.Mail.Pop3State)">
+            <summary>
+            Executes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ConnectCommand.SetClientStream">
+            <summary>
+            Sets the client stream.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ConnectCommand.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>
+            The <c>Pop3Response</c> containing the results of the
+            Pop3 command execution.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Response">
+            <summary>
+            This class represents a Pop3 response message and
+            is intended to be used as a base class for all other
+            Pop3Response types.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Response.#ctor(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Response"/> class.
+            </summary>
+            <param name="responseContents">The response contents.</param>
+            <param name="hostMessage">The host message.</param>
+            <param name="statusIndicator">if set to <c>true</c> [status indicator].</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Response.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="responseContents">The response contents.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Response.ResponseContents">
+            <summary>
+            Gets the response contents.
+            </summary>
+            <value>The response contents.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Response.StatusIndicator">
+            <summary>
+            Gets a value indicating whether message was <c>true</c> +OK or <c>false</c> -ERR
+            </summary>
+            <value><c>true</c> if [status indicator]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Response.HostMessage">
+            <summary>
+            Gets the host message.
+            </summary>
+            <value>The host message.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.DeleCommand">
+            <summary>
+            This class represents the Pop3 DELE command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.DeleCommand.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.DeleCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="messageId">The message id.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.DeleCommand.CreateRequestMessage">
+            <summary>
+            Creates the DELE request message.
+            </summary>
+            <returns>
+            The byte[] containing the DELE request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.ListCommand">
+            <summary>
+            This class represents both the multiline and single line Pop3 LIST command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ListCommand.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.ListCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="messageId">The message id.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ListCommand.CreateRequestMessage">
+            <summary>
+            Creates the LIST request message.
+            </summary>
+            <returns>The byte[] containing the LIST request message.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ListCommand.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>A <c>ListResponse</c> containing the results of the Pop3 LIST command.</returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.ListResponse">
+            <summary>
+            This class represents the response message 
+            returned from both a single line and multi line 
+            Pop3 LIST Command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.ListResponse.#ctor(Yunsoft.Common.Mail.Pop3Response,System.Collections.Generic.List{Yunsoft.Common.Mail.Pop3ListItem})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.ListResponse"/> class.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.ListResponse.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>The items.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.ListResponse.MessageNumber">
+            <summary>
+            Gets the message number.
+            </summary>
+            <value>The message number.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.ListResponse.Octets">
+            <summary>
+            Gets number of octets.
+            </summary>
+            <value>The number of octets.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.MailMessageEx">
+            <summary>
+            This class adds a few internet mail headers not already exposed by the 
+            System.Net.MailMessage.  It also provides support to encapsulate the
+            nested mail attachments in the Children collection.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.MailMessageEx"/> class.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.GetHeader(System.String)">
+            <summary>
+            Gets the header.
+            </summary>
+            <param name="header">The header.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.CreateMailMessageFromEntity(Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Creates the mail message from entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.CreateMailAddress(System.String)">
+            <summary>
+            Creates the mail address.
+            </summary>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.PopulateAddressList(System.String,System.Net.Mail.MailAddressCollection)">
+            <summary>
+            Populates the address list.
+            </summary>
+            <param name="addressList">The address list.</param>
+            <param name="recipients">The recipients.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.MailMessageEx.GetMailAddresses(System.String)">
+            <summary>
+            Gets the mail addresses.
+            </summary>
+            <param name="addressList">The address list.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.MessageNumber">
+            <summary>
+            Gets or sets the message number of the MailMessage on the POP3 server.
+            </summary>
+            <value>The message number.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.Children">
+            <summary>
+            Gets the children MailMessage attachments.
+            </summary>
+            <value>The children MailMessage attachments.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.DeliveryDate">
+            <summary>
+            Gets the delivery date.
+            </summary>
+            <value>The delivery date.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.ReturnAddress">
+            <summary>
+            Gets the return address.
+            </summary>
+            <value>The return address.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.Routing">
+            <summary>
+            Gets the routing.
+            </summary>
+            <value>The routing.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.MessageId">
+            <summary>
+            Gets the message id.
+            </summary>
+            <value>The message id.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.MimeVersion">
+            <summary>
+            Gets the MIME version.
+            </summary>
+            <value>The MIME version.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.ContentId">
+            <summary>
+            Gets the content id.
+            </summary>
+            <value>The content id.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.ContentDescription">
+            <summary>
+            Gets the content description.
+            </summary>
+            <value>The content description.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.ContentDisposition">
+            <summary>
+            Gets the content disposition.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.MailMessageEx.ContentType">
+            <summary>
+            Gets the type of the content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.NoopCommand">
+            <summary>
+            This class represents the Pop3 NOOP command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.NoopCommand.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.NoopCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.NoopCommand.CreateRequestMessage">
+            <summary>
+            Creates the NOOP request message.
+            </summary>
+            <returns>
+            The byte[] containing the NOOP request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.PassCommand">
+            <summary>
+            This class represents the Pop3 PASS command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.PassCommand.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.PassCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.PassCommand.CreateRequestMessage">
+            <summary>
+            Creates the PASS request message.
+            </summary>
+            <returns>
+            The byte[] containing the PASS request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Client">
+            <summary>
+            The Pop3Client class provides a wrapper for the Pop3 commands
+            that can be executed against a Pop3Server.  This class will 
+            execute and return results for the various commands that are 
+            executed.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Client"/> class using the default POP3 port 110
+            without using SSL.
+            </summary>
+            <param name="hostname">The hostname.</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.#ctor(System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Client"/> class using the default POP3 port 110.
+            </summary>
+            <param name="hostname">The hostname.</param>
+            <param name="useSsl">if set to <c>true</c> [use SSL].</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Client"/> class.
+            </summary>
+            <param name="hostname">The hostname.</param>
+            <param name="port">The port.</param>
+            <param name="useSsl">if set to <c>true</c> [use SSL].</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Client"/> class.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.EnsureConnection">
+            <summary>
+            Checks the connection.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.SetState(Yunsoft.Common.Mail.Pop3State)">
+            <summary>
+            Resets the state.
+            </summary>
+            <param name="state">The state.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.EnsureResponse(Yunsoft.Common.Mail.Pop3Response,System.String)">
+            <summary>
+            Ensures the response.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.EnsureResponse(Yunsoft.Common.Mail.Pop3Response)">
+            <summary>
+            Ensures the response.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.TraceCommand``2(``0)">
+            <summary>
+            Traces the command.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Connect">
+            <summary>
+            Connects this instance and properly sets the 
+            client stream to Use Ssl if it is specified.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.SetClientStream(System.IO.Stream)">
+            <summary>
+            Sets the client stream.  If UseSsl <c>true</c> then wrap 
+            the client's <c>NetworkStream</c> in an <c>SslStream</c>, if UseSsl <c>false</c> 
+            then set the client stream to the <c>NetworkStream</c>
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Authenticate">
+            <summary>
+            Authenticates this instance.
+            </summary>
+            <remarks>A successful execution of this method will result in a Current State of Transaction.
+            Unsuccessful USER or PASS commands can be reattempted by resetting the Username or Password 
+            properties and re-execution of the methods.</remarks>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">
+            If the Pop3Server is unable to be connected.
+            If the User command is unable to be successfully executed.
+            If the Pass command is unable to be successfully executed.
+            </exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Dele(Yunsoft.Common.Mail.Pop3ListItem)">
+            <summary>
+            Executes the POP3 DELE command.
+            </summary>
+            <param name="item">The item.</param>
+            /// <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the DELE command was unable to be executed successfully.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Noop">
+            <summary>
+            Executes the POP3 NOOP command.
+            </summary>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the NOOP command was unable to be executed successfully.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Rset">
+            <summary>
+            Executes the POP3 RSET command.
+            </summary>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the RSET command was unable to be executed successfully.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Stat">
+            <summary>
+            Executes the POP3 STAT command.
+            </summary>
+            <returns>A Stat object containing the results of STAT command.</returns>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the STAT command was unable to be executed successfully.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.List">
+            <summary>
+            Executes the POP3 List command.
+            </summary>
+            <returns>A generic List of Pop3Items containing the results of the LIST command.</returns>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the LIST command was unable to be executed successfully.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.List(System.Int32)">
+            <summary>
+            Lists the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>A <c>Pop3ListItem</c> for the requested Pop3Item.</returns>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the LIST command was unable to be executed successfully for the provided message id.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.RetrMimeEntity(Yunsoft.Common.Mail.Pop3ListItem)">
+            <summary>
+            Retrs the specified message.
+            </summary>
+            <param name="item">The item.</param>
+            <returns>A MimeEntity for the requested Pop3 Mail Item.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.RetrMailMessageEx(Yunsoft.Common.Mail.Pop3ListItem)">
+            <summary>
+            Retrs the mail message ex.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Quit">
+            <summary>
+            Executes the Pop3 QUIT command.
+            </summary>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the quit command returns a -ERR server message.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.ExecuteCommand``2(``1)">
+            <summary>
+            Provides a common way to execute all commands.  This method
+            validates the connection, traces the command and finally
+            validates the response message for a -ERR response.
+            </summary>
+            <param name="command">The command.</param>
+            <returns>The Pop3Response for the provided command</returns>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the HostMessage does not start with '+OK'.</exception>
+            <exception cref="T:Yunsoft.Common.Mail.Pop3Exception">If the client is no longer connected.</exception>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Client.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="E:Yunsoft.Common.Mail.Pop3Client.Trace">
+            <summary>
+            Traces the various command objects that executed during this objects
+            lifetime.
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.Hostname">
+            <summary>
+            Gets the hostname.
+            </summary>
+            <value>The hostname.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.Port">
+            <summary>
+            Gets the port.
+            </summary>
+            <value>The port.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.UseSsl">
+            <summary>
+            Gets a value indicating whether [use SSL].
+            </summary>
+            <value><c>true</c> if [use SSL]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3Client.CurrentState">
+            <summary>
+            Gets the state of the current.
+            </summary>
+            <value>The state of the current.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Commands">
+            <summary>
+            This class contains a string representation of Pop3 commands
+            that can be executed.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.User">
+            <summary>
+            The USER command followed by a space.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Crlf">
+            <summary>
+            The CRLF escape sequence.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Quit">
+            <summary>
+            The QUIT command followed by a CRLF.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Stat">
+            <summary>
+            The STAT command followed by a CRLF.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.List">
+            <summary>
+            The LIST command followed by a space.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Retr">
+            <summary>
+            The RETR command followed by a space.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Noop">
+            <summary>
+            The NOOP command followed by a CRLF.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Dele">
+            <summary>
+            The DELE command followed by a space.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Rset">
+            <summary>
+            The RSET command followed by a CRLF.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Pass">
+            <summary>
+            The PASS command followed by a space.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Commands.Top">
+            <summary>
+            The TOP command followed by a space.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Exception">
+            <summary>
+            This class represents a Pop3 Exception.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Exception.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Exception"/> class.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Exception.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Exception"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Exception.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Exception"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3Exception"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0). </exception>
+            <exception cref="T:System.ArgumentNullException">The info parameter is null. </exception>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3ListItem">
+            <summary>
+            This class represents an item returned from the 
+            Pop3 LIST command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Pop3ListItem.#ctor(System.Int32,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Pop3ListItem"/> class.
+            </summary>
+            <param name="messageNumber">The message number.</param>
+            <param name="octets">The octets.</param>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3ListItem.MessageId">
+            <summary>
+            Gets or sets the message number.
+            </summary>
+            <value>The message number.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Pop3ListItem.Octets">
+            <summary>
+            Gets or sets the octets.
+            </summary>
+            <value>The octets.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Pop3Responses">
+            <summary>
+            This class contains the Positive and Negative starting response strings
+            that can be returned from a Pop3 server.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Responses.Ok">
+            <summary>
+            The +OK starting of a positive response from the server.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3Responses.Err">
+            <summary>
+            The -ERR starting of a negative response from the server.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3State.Unknown">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3State.Authorization">
+            <summary>
+            Connected to Pop3 server, but not authorized.
+            May issue any of the following commands QUIT, USER, PASS
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3State.Transaction">
+            <summary>
+            Authorized to Pop3 server, can issue any of the following commands;
+            STAT, LIST, RETR, DELE, RSET
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Mail.Pop3State.Update">
+            <summary>
+            Quit command was sent to server indicating deleted
+            messages should be removed.
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.QuitCommand">
+            <summary>
+            This class represents the Pop3 QUIT command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.QuitCommand.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.QuitCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.QuitCommand.CreateRequestMessage">
+            <summary>
+            Creates the Quit request message.
+            </summary>
+            <returns>
+            The byte[] containing the QUIT request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.RetrCommand">
+            <summary>
+            This class represents the Pop3 RETR command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RetrCommand.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.RetrCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RetrCommand.CreateRequestMessage">
+            <summary>
+            Creates the RETR request message.
+            </summary>
+            <returns>
+            The byte[] containing the RETR request message.
+            </returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RetrCommand.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>
+            The <c>Pop3Response</c> containing the results of the
+            Pop3 command execution.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.RetrResponse">
+            <summary>
+            This class represents a RETR response message resulting
+            from a Pop3 RETR command execution against a Pop3 Server.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RetrResponse.#ctor(Yunsoft.Common.Mail.Pop3Response,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.RetrResponse"/> class.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="messageLines">The message lines.</param>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.RetrResponse.MessageLines">
+            <summary>
+            Gets the message lines.
+            </summary>
+            <value>The Pop3 message lines.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.RsetCommand">
+            <summary>
+            This command represents the Pop3 RSET command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RsetCommand.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.RsetCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.RsetCommand.CreateRequestMessage">
+            <summary>
+            Creates the RSET request message.
+            </summary>
+            <returns>
+            The byte[] containing the RSET request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.Stat">
+            <summary>
+            This class represents the results from the execution 
+            of a pop3 STAT command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.Stat.#ctor(System.Int32,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.Stat"/> class.
+            </summary>
+            <param name="messageCount">The message count.</param>
+            <param name="octets">The octets.</param>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Stat.MessageCount">
+            <summary>
+            Gets or sets the message count.
+            </summary>
+            <value>The message count.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.Stat.Octets">
+            <summary>
+            Gets or sets the octets.
+            </summary>
+            <value>The octets.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.StatCommand">
+            <summary>
+            This class represents the Pop3 STAT command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.StatCommand.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.StatCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.StatCommand.CreateRequestMessage">
+            <summary>
+            Creates the STAT request message.
+            </summary>
+            <returns>
+            The byte[] containing the STAT request message.
+            </returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.StatCommand.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>
+            The <c>Pop3Response</c> containing the results of the
+            Pop3 command execution.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.StatResponse">
+            <summary>
+            This class represents the resulting Pop3 response from a STAT command
+            executed against a Pop3 server.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.StatResponse.#ctor(Yunsoft.Common.Mail.Pop3Response,System.Int32,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.StatResponse"/> class.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="messageCount">The message count.</param>
+            <param name="octets">The octets.</param>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.StatResponse.MessageCount">
+            <summary>
+            Gets the message count.
+            </summary>
+            <value>The message count.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mail.StatResponse.Octets">
+            <summary>
+            Gets the octets.
+            </summary>
+            <value>The octets.</value>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.TopCommand.#ctor(System.IO.Stream,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.TopCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="messageNumber">The message number.</param>
+            <param name="lineCount">The line count.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.TopCommand.CreateRequestMessage">
+            <summary>
+            Abstract method intended for inheritors to
+            build out the byte[] request message for
+            the specific command.
+            </summary>
+            <returns>
+            The byte[] containing the request message.
+            </returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.TopCommand.CreateResponse(System.Byte[])">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <returns>
+            The <c>Pop3Response</c> containing the results of the
+            Pop3 command execution.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.Mail.UserCommand">
+            <summary>
+            This command represents a Pop3 USER command.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.UserCommand.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mail.UserCommand"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="username">The username.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mail.UserCommand.CreateRequestMessage">
+            <summary>
+            Creates the USER request message.
+            </summary>
+            <returns>
+            The byte[] containing the USER request message.
+            </returns>
+        </member>
+        <member name="T:Yunsoft.Common.MessageBox">
+            <summary>
+            显示消息提示对话框。
+            	
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.Show(System.Web.UI.Page,System.String)">
+            <summary>
+            显示消息提示对话框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowServerBusyTip(System.Web.UI.Page,System.String)">
+            <summary>
+            显示服务器繁忙提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowSuccessTip(System.Web.UI.Page,System.String)">
+            <summary>
+            显示操作成功提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowFailTip(System.Web.UI.Page,System.String)">
+            <summary>
+            显示操作失败的提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowLoadingTip(System.Web.UI.Page,System.String)">
+            <summary>
+            显示正在加载的提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowAndBack(System.Web.UI.Page,System.String)">
+            <summary>
+            显示消息提示对话框，并返回原页面
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowConfirm(System.Web.UI.WebControls.WebControl,System.String)">
+            <summary>
+            控件点击 消息确认提示框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowAndRedirect(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示消息提示对话框，并进行页面跳转
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">跳转的目标URL</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowAndRedirects(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示消息提示对话框，(父页面)并进行页面跳转
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">跳转的目标URL</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ResponseScript(System.Web.UI.Page,System.String)">
+            <summary>
+            输出自定义脚本信息
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="script">输出脚本</param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowServerBusyTip(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示服务器繁忙提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowSuccessTip(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示操作成功提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowSuccessTipScript(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示操作成功提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowFailTip(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示操作失败的提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowFailTipScript(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示操作成功提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Yunsoft.Common.MessageBox.ShowLoadingTip(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示正在加载的提示信息
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Yunsoft.Common.Mime.MimeEntity">
+            <summary>
+            This class represents a Mime entity.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mime.MimeEntity"/> class.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.#ctor(Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mime.MimeEntity"/> class.
+            </summary>
+            <param name="parent">The parent.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.SetContentType(System.Net.Mime.ContentType)">
+            <summary>
+            Sets the type of the content.
+            </summary>
+            <param name="contentType">Type of the content.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.ToMailMessageEx">
+            <summary>
+            Toes the mail message ex.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.ToMailMessageEx(Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Toes the mail message ex.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.BuildSinglePartMessage(Yunsoft.Common.Mime.MimeEntity,Yunsoft.Common.Mail.MailMessageEx)">
+            <summary>
+            Builds the single part message.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.GetEncoding">
+            <summary>
+            Gets the body encoding.
+            </summary>
+            <param name="contentType">Type of the content.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.BuildMultiPartMessage(Yunsoft.Common.Mime.MimeEntity,Yunsoft.Common.Mail.MailMessageEx)">
+            <summary>
+            Builds the multi part message.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.SetMessageBody(Yunsoft.Common.Mail.MailMessageEx,Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Sets the message body.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="child">The child.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.DecodeBytes(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Decodes the bytes.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.CreateAlternateView(Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Creates the alternate view.
+            </summary>
+            <param name="view">The view.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.TrimBrackets(System.String)">
+            <summary>
+            Trims the brackets.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeEntity.CreateAttachment(Yunsoft.Common.Mime.MimeEntity)">
+            <summary>
+            Creates the attachment.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.EncodedMessage">
+            <summary>
+            Gets the encoded message.
+            </summary>
+            <value>The encoded message.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.Children">
+            <summary>
+            Gets the children.
+            </summary>
+            <value>The children.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.ContentType">
+            <summary>
+            Gets the type of the content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.MediaSubType">
+            <summary>
+            Gets the type of the media sub.
+            </summary>
+            <value>The type of the media sub.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.MediaMainType">
+            <summary>
+            Gets the type of the media main.
+            </summary>
+            <value>The type of the media main.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.MimeVersion">
+            <summary>
+            Gets or sets the MIME version.
+            </summary>
+            <value>The MIME version.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.ContentId">
+            <summary>
+            Gets or sets the content id.
+            </summary>
+            <value>The content id.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.ContentDescription">
+            <summary>
+            Gets or sets the content description.
+            </summary>
+            <value>The content description.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.ContentDisposition">
+            <summary>
+            Gets or sets the content disposition.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.TransferEncoding">
+            <summary>
+            Gets or sets the transfer encoding.
+            </summary>
+            <value>The transfer encoding.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.ContentTransferEncoding">
+            <summary>
+            Gets or sets the content transfer encoding.
+            </summary>
+            <value>The content transfer encoding.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.HasBoundary">
+            <summary>
+            Gets a value indicating whether this instance has boundary.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has boundary; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.StartBoundary">
+            <summary>
+            Gets the start boundary.
+            </summary>
+            <value>The start boundary.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.EndBoundary">
+            <summary>
+            Gets the end boundary.
+            </summary>
+            <value>The end boundary.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.Parent">
+            <summary>
+            Gets or sets the parent.
+            </summary>
+            <value>The parent.</value>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeEntity.Content">
+            <summary>
+            Gets or sets the content.
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mime.MimeReader">
+            <summary>
+            This class is responsible for parsing a string array of lines
+            containing a MIME message.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mime.MimeReader"/> class.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.#ctor(Yunsoft.Common.Mime.MimeEntity,System.Collections.Generic.Queue{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mime.MimeReader"/> class.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="lines">The lines.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yunsoft.Common.Mime.MimeReader"/> class.
+            </summary>
+            <param name="lines">The lines.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.ParseHeaders">
+            <summary>
+            Parse headers into _entity.Headers NameValueCollection.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.ProcessHeaders">
+            <summary>
+            Processes mime specific headers.
+            </summary>
+            <returns>A mime entity with mime specific headers parsed.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.CreateMimeEntity">
+            <summary>
+            Creates the MIME entity.
+            </summary>
+            <returns>A mime entity containing 0 or more children representing the mime message.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.SetDecodedContentStream">
+            <summary>
+            Sets the decoded content stream by decoding the EncodedMessage 
+            and writing it to the entity content stream.
+            </summary>
+            <param name="entity">The entity containing the encoded message.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetBytes(System.String)">
+            <summary>
+            Gets a byte[] of content for the provided string.
+            </summary>
+            <param name="decodedContent">Content.</param>
+            <returns>A byte[] containing content.</returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.ParseBody">
+            <summary>
+            Parses the body.
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.AddChildEntity(Yunsoft.Common.Mime.MimeEntity,System.Collections.Generic.Queue{System.String})">
+            <summary>
+            Adds the child entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetContentType(System.String)">
+            <summary>
+            Gets the type of the content.
+            </summary>
+            <param name="contentType">Type of the content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetMediaType(System.String)">
+            <summary>
+            Gets the type of the media.
+            </summary>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetMediaMainType(System.String)">
+            <summary>
+            Gets the type of the media main.
+            </summary>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetMediaSubType(System.String)">
+            <summary>
+            Gets the type of the media sub.
+            </summary>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Mime.MimeReader.GetTransferEncoding(System.String)">
+            <summary>
+            Gets the transfer encoding.
+            </summary>
+            <param name="transferEncoding">The transfer encoding.</param>
+            <returns></returns>
+            <remarks>
+            The transfer encoding determination follows the same rules as 
+            Peter Huber's article w/ the exception of not throwing exceptions 
+            when binary is provided as a transferEncoding.  Instead it is left
+            to the calling code to check for binary.
+            </remarks>
+        </member>
+        <member name="P:Yunsoft.Common.Mime.MimeReader.Lines">
+            <summary>
+            Gets the lines.
+            </summary>
+            <value>The lines.</value>
+        </member>
+        <member name="T:Yunsoft.Common.Mime.QuotedPrintableEncoding">
+            <summary>
+            This class is based on the QuotedPrintable class written by Bill Gearhart
+            found at http://www.aspemporium.com/classes.aspx?cid=6
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.PageLoader.Download(System.String)">
+            <summary>
+            下载某个网址的页面内容
+            </summary>
+            <param name="url">网址</param>
+            <returns>返回页面内容</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageLoader.Download(System.String,System.String)">
+            <summary>
+            下载某个网址的页面内容
+            </summary>
+            <param name="url">网址</param>
+            <param name="agentInfo">客户端信息</param>
+            <returns>返回页面内容</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageLoader.getResponse(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="agentInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageLoader.getEncoding(System.Net.WebResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.PageValidate">
+            <summary>
+            页面数据校验类
+            Copyright (C)     
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.FetchInputDigit(System.Web.HttpRequest,System.String,System.Int32)">
+            <summary>
+            检查Request查询字符串的键值，是否是数字，最大长度限制
+            </summary>
+            <param name="req">Request</param>
+            <param name="inputKey">Request的键值</param>
+            <param name="maxLen">最大长度</param>
+            <returns>返回Request查询字符串</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsNumber(System.String)">
+            <summary>
+            是否数字字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsNumberSign(System.String)">
+            <summary>
+            是否数字字符串 可带正负号
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsDecimal(System.String)">
+            <summary>
+            是否是浮点数
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsDecimalSign(System.String)">
+            <summary>
+            是否是浮点数 可带正负号
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsHasCHZN(System.String)">
+            <summary>
+            检测是否有中文字符
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsEmail(System.String)">
+            <summary>
+            是否邮件地址
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.IsDateTime(System.String)">
+            <summary>
+            日期格式字符串判断
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.CheckIDCard(System.String)">
+            <summary>
+            验证身份证号码
+            </summary>
+            <param name="Id">身份证号码</param>
+            <returns>验证成功为True，否则为False</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.CheckIDCard18(System.String)">
+            <summary>
+            验证15位身份证号
+            </summary>
+            <param name="Id">身份证号</param>
+            <returns>验证成功为True，否则为False</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.CheckIDCard15(System.String)">
+            <summary>
+            验证18位身份证号
+            </summary>
+            <param name="Id">身份证号</param>
+            <returns>验证成功为True，否则为False</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.SqlText(System.String,System.Int32)">
+            <summary>
+            检查字符串最大长度，返回指定长度的串
+            </summary>
+            <param name="sqlInput">输入字符串</param>
+            <param name="maxLength">最大长度</param>
+            <returns></returns>			
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.HtmlEncode(System.String)">
+            <summary>
+            字符串编码
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.SetLabel(System.Web.UI.WebControls.Label,System.String)">
+            <summary>
+            设置Label显示Encode的字符串
+            </summary>
+            <param name="lbl"></param>
+            <param name="txtInput"></param>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.Encode(System.String)">
+            <summary>
+            转换成 HTML code
+            </summary>
+            <param name="str">string</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.Decode(System.String)">
+             <summary>
+            解析html成 普通文本
+             </summary>
+             <param name="str">string</param>
+             <returns>string</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.SqlTextClear(System.String)">
+            <summary>
+            SQL注入字符清理
+            </summary>
+            <param name="sqlText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.PageValidate.isContainSpecChar(System.String)">
+            <summary>
+            检查输入的参数是不是某些定义好的特殊字符：这个方法目前用于密码输入的安全检查
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.PinyinHelper">
+            <summary>
+            获得汉字的拼音
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.PinyinHelper.GetPinyin(System.String)">
+            <summary>
+            获得汉字的拼音，英文中文标点符号将被'-' 替换 并转换为小写
+            </summary>
+            <param name="chineseChars">汉字字符串</param>
+            <returns>拼音</returns>
+        </member>
+        <member name="M:Yunsoft.Common.PinyinHelper.GetShortPinyin(System.String)">
+            <summary>
+            获得汉字拼音的简写，即每一个汉字的拼音的首字母组成的串，如果输入的是英文字符将原样输出，中文标点符号将被忽略
+            </summary>
+            <param name="chineseChars">汉字字符串</param>
+            <returns>拼音简写</returns>
+        </member>
+        <member name="T:Yunsoft.Common.Rmb">
+            <summary> 
+            人民币大小写格式转换
+            </summary> 
+        </member>
+        <member name="M:Yunsoft.Common.Rmb.CmycurD(System.Decimal)">
+            <summary> 
+            转换人民币大小金额 
+            </summary> 
+            <param name="num">金额</param> 
+            <returns>返回大写形式</returns> 
+        </member>
+        <member name="M:Yunsoft.Common.Rmb.CmycurD(System.String)">
+            
+            <summary> 
+            一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="T:Yunsoft.Common.SqlExecutor">
+            <summary>
+            Sql执行器
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.SqlExecutor.ExecuteScriptFile(System.String,System.String)">
+            <summary>
+            执行Sql文件
+            </summary>
+            <param name="connectionString">ConnectionString</param>
+            <param name="fileMapPath">FileMapPath</param>
+            <exception cref="T:System.IO.FileNotFoundException">FileNotFound</exception>
+        </member>
+        <member name="M:Yunsoft.Common.SqlExecutor.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行Sql文件
+            </summary>
+            <param name="connectionString">ConnectionString</param>
+            <param name="safeSql">SafeSql</param>
+            <exception cref="T:System.IO.FileNotFoundException">FileNotFound</exception>
+        </member>
+        <member name="T:Yunsoft.Common.DBServerType">
+            <summary>
+            DB服务器版本 暂未启用
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.StringPlus">
+            <summary>
+            String字符串扩展类，增加了很多扩展功能
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetStrArray(System.String,System.Char,System.Boolean)">
+            <summary>
+            获取字符串分割后的字符集合
+            </summary>
+            <param name="str"></param>
+            <param name="speater"></param>
+            <param name="toLower"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetStrArray(System.String)">
+            <summary>
+            获取用逗号分割后字符数组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetArrayStr(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            获取集合中的字符串
+            </summary>
+            <param name="list"></param>
+            <param name="speater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetArrayStr(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            得到数组列表以逗号分隔的字符串
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetArrayValueStr(System.Collections.Generic.Dictionary{System.Int32,System.Int32})">
+            <summary>
+            得到数组列表以逗号分隔的字符串
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.DelLastComma(System.String)">
+            <summary>
+            删除最后结尾的一个逗号
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.DelLastChar(System.String,System.String)">
+            <summary>
+            删除最后结尾的指定字符后的字符
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.ToSBC(System.String)">
+            <summary>
+            转全角的函数(SBC case)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.ToDBC(System.String)">
+            <summary>
+             转半角的函数(SBC case)
+            </summary>
+            <param name="input">输入</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.GetSubStringList(System.String,System.Char)">
+            <summary>
+            得到子字符串集合
+            </summary>
+            <param name="o_str"></param>
+            <param name="sepeater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SplitMulti(System.String,System.String)">
+            <summary>
+            分割字符串
+            </summary>
+            <param name="str"></param>
+            <param name="splitstr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SqlSafeString(System.String,System.Boolean)">
+            <summary>
+            替换SQL字符
+            </summary>
+            <param name="String"></param>
+            <param name="IsDel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.TrimStart(System.String,System.String)">
+            <summary>
+            从 srcString 的开头剔除掉 trimString
+            </summary>
+            <param name="srcString"></param>
+            <param name="trimString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.TrimEnd(System.String,System.String)">
+            <summary>
+            从 srcString 的末尾剔除掉 trimString
+            </summary>
+            <param name="srcString"></param>
+            <param name="trimString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SubString(System.Object,System.String,System.Int32,System.Boolean)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="target">内容</param>
+            <param name="sign">替换符号</param>
+            <param name="subLength">截取长度</param>
+            <param name="isShow">是否显示替换符号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SubString(System.Object,System.Int32,System.String)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="target">内容</param>
+            <param name="subLength">截取长度</param>
+            <param name="sign">替换符号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SubString4EnCn(System.Object,System.Int32,System.String)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="target">内容</param>
+            <param name="subLength">截取长度</param>
+            <param name="sign">替换符号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.IsNullOrEmpty(System.Object)">
+            <summary>
+            检查字符串是否是 null 或者空白字符,不同于.net自带的string.IsNullOrEmpty，多个空格在这里也返回true。
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.StringPlus.SplitToSize(System.String,System.Char,System.Int32,System.Int32)">
+            <summary>
+            分割字符串
+            </summary>
+            <param name="str">原字符</param>
+            <param name="splitstr">分隔符</param>
+            <param name="defWidth">默认宽度</param>
+            <param name="defHeight">默认高度</param>
+            <returns>Size对象</returns>
+        </member>
+        <member name="T:Yunsoft.Common.ImageTools">
+            <summary>
+            图片工具类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.ImageToByteArray(System.Drawing.Image)">
+             <summary > 
+            将Image对象转化成二进制流 
+             </summary > 
+             <param name="image" > </param > 
+             <returns > </returns > 
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.BuildImage(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            两张图片的合并
+            </summary>
+            <param name="mainImgePath">主图的路径</param>
+            <param name="secondaryImgePath">被合并的图片的图片的路径(次图)</param>
+            <param name="x">将次图 合并的主图的坐标的 X轴</param>
+            <param name="y">将次图 合并的主图的坐标的 Y轴</param>
+            <param name="width">合并后次图的宽度</param>
+            <param name="height">合并后次图的高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">缩略图路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">缩略图路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>缩略图默认png格式</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.Drawing.Imaging.ImageFormat,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">缩略图路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="imageFormat">图片保存格式</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>当原图尺寸小于指定缩略尺寸时, 不进行缩略, 直接输出原图, 并且不更改尺寸.</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.GetThumbnail(System.Drawing.Image,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.Drawing.Graphics@,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            获取缩略图对象
+            </summary>
+            <param name="originalImage">源图对象</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="graphics">输出绘图对象, 可继续追加水印</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>当原图尺寸小于指定缩略尺寸时, 不进行缩略, 直接输出原图, 并且不更改尺寸.</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeTextWaterThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.String,System.String,System.String,System.Int32,System.String,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成文字水印缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">水印缩略图保存路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="watermarkText">水印文字</param>
+            <param name="watermarkPosition">水印位置</param>
+            <param name="fontFamily">水印字体样式</param>
+            <param name="fontSize">水印字体大小</param>
+            <param name="fontColor">水印字体颜色</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>缩略图默认png格式</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeTextWaterThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.Drawing.Imaging.ImageFormat,System.String,System.String,System.String,System.Int32,System.String,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成文字水印缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">水印缩略图保存路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="imageFormat">图片保存格式</param>
+            <param name="watermarkText">水印文字</param>
+            <param name="watermarkPosition">水印位置</param>
+            <param name="fontFamily">水印字体样式</param>
+            <param name="fontSize">水印字体大小</param>
+            <param name="fontColor">水印字体颜色</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>缩略图默认png格式</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeImageWaterThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.String,System.String,System.Int32,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成图片水印缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">水印缩略图保存路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="waterMarkPicPath">水印图片</param>
+            <param name="watermarkPosition">水印位置</param>
+            <param name="transparentValue">水印透明度</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>缩略图默认png格式</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.MakeImageWaterThumbnail(System.String,System.String,System.Int32,System.Int32,Yunsoft.Common.MakeThumbnailMode,System.Drawing.Imaging.ImageFormat,System.String,System.String,System.Int32,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            生成图片水印缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">水印缩略图保存路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>
+            <param name="imageFormat">图片保存格式</param>
+            <param name="waterMarkPicPath">水印图片</param>
+            <param name="watermarkPosition">水印位置</param>
+            <param name="transparentValue">水印透明度</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <remarks>缩略图默认png格式</remarks>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.addWatermarkText(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode,System.Drawing.Imaging.PixelFormat,System.Int32)">
+            <summary>
+            文字水印
+            </summary>
+            <param name="picture">添加水印的图片</param>
+            <param name="_watermarkText">水印文字</param>
+            <param name="_watermarkPosition">水印位置</param>
+            <param name=" image.Width">宽度</param>
+            <param name="image.Height">高度</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <param name="pixelFormat">指定图像中每个像素的颜色数据的格式</param>
+        </member>
+        <member name="M:Yunsoft.Common.ImageTools.addWatermarkImage(System.String,System.String,System.String,System.String,System.Int32,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode,System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            图片水印
+            </summary>
+            <param name="picture">添加水印的图片</param>
+            <param name="WaterMarkPicPath">水印图片</param>
+            <param name="_watermarkPosition">水印位置</param>
+            <param name=" image.Width">宽度</param>
+            <param name="image.Height">高度</param>
+            <param name="interpolationMode">指定在缩放或旋转图像时使用的算法</param>
+            <param name="smoothingMode">指定是否将平滑处理（抗锯齿）应用于直线、曲线和已填充区域的边缘</param>
+            <param name="pixelFormat">指定图像中每个像素的颜色数据的格式</param>
+        </member>
+        <member name="T:Yunsoft.Common.MakeThumbnailMode">
+            <summary>
+            生成缩略图模式
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.MakeThumbnailMode.Auto">
+            <summary>
+            自动缩放
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.MakeThumbnailMode.W">
+            <summary>
+            指定宽，高按比例
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.MakeThumbnailMode.H">
+            <summary>
+            指定高，宽按比例
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.MakeThumbnailMode.HW">
+            <summary>
+            指定高宽缩放（可能变形）
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.MakeThumbnailMode.Cut">
+            <summary>
+            指定高宽裁减（不变形）
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.OperatingSystemOSVersion">
+            <summary>
+            系统版本
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.OperatingSystemSimple">
+            <summary>
+            系统版本
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.OperatingSystemFull">
+            <summary>
+            系统版本
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.ServerName">
+            <summary>
+            服务器的计算机名称
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.ServerIP">
+            <summary>
+            Web服务器IP
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.ServerDomain">
+            <summary>
+            Web服务器域名
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.ServerPort">
+            <summary>
+            Web服务器端口
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.WebServerVersion">
+            <summary>
+            Web服务器IIS版本
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.DotNetVersion">
+            <summary>
+            .NET Framework 版本
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.DotNetLanguage">
+            <summary>
+            .NET Framework 区域
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.SystemUptime">
+            <summary>
+            系统启动时间(已开机xxx毫秒)
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.SystemInfo.ScriptTimeout">
+            <summary>
+            执行超时时间
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.TimeParser">
+            <summary>
+            时间格式转换处理类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.TimeParser.SecondToMinute(System.Int32)">
+            <summary>
+            把秒转换成分钟
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.TimeParser.GetMonthLastDate(System.Int32,System.Int32)">
+            <summary>
+            返回某年某月最后一天
+            </summary>
+            <param name="year">年份</param>
+            <param name="month">月份</param>
+            <returns>日</returns>
+        </member>
+        <member name="M:Yunsoft.Common.TimeParser.TimeToSecond(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            时分秒转换成秒
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.TimeParser.SecondToDateTime(System.Int32)">
+            <summary>
+            秒转换为时分秒
+            </summary>
+            <param name="seconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.TimeParser.DateTimeFormat(System.Object,System.String,System.Boolean)">
+            <summary>
+            时间格式化
+            </summary>
+            <param name="obj"></param>
+            <param name="format"></param>
+            <param name="isFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Common.UrlOper">
+            <summary>
+            URL的操作类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.UrlOper.IsBase64(System.String)">
+            <summary>
+            是否是Base64字符串
+            </summary>
+            <param name="eStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.UrlOper.AddParam(System.String,System.String,System.String)">
+            <summary>
+            添加URL参数
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.UrlOper.UpdateParam(System.String,System.String,System.String)">
+            <summary>
+            更新URL参数
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.UrlOper.ParseUrl(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
+            <summary>
+            分析 url 字符串中的参数信息
+            </summary>
+            <param name="url">输入的 URL</param>
+            <param name="baseUrl">输出 URL 的基础部分</param>
+            <param name="nvc">输出分析后得到的 (参数名,参数值) 的集合</param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.EncodeVideoAsync(VideoEncoder.VideoFile,System.String,System.String,System.Int32)">
+            <summary>
+            Async for when secure threading is not necessary
+            </summary>
+            <param name="input"></param>
+            <param name="encodingCommand"></param>
+            <param name="outputFile"></param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.EncodeVideoAsync(VideoEncoder.VideoFile,System.String,System.String,System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            Async for WinForms where secure threading is necessary, pass the control that will be used as Invoker
+            </summary>
+            <param name="input"></param>
+            <param name="encodingCommand"></param>
+            <param name="outputFile"></param>
+            <param name="caller"></param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.EncodeVideoAsyncAutoCommand(VideoEncoder.VideoFile,System.String,System.Int32)">
+            <summary>
+            Async for when secure threading is not necessary
+            This method uses output filename to detect resulting type, same resolution as source and the same bitrate as source
+            </summary>
+            <param name="input"></param>
+            <param name="encodingCommand"></param>
+            <param name="outputFile"></param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.EncodeVideoAsyncAutoCommand(VideoEncoder.VideoFile,System.String,System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            Async for WinForms where secure threading is necessary, pass the control that will be used as Invoker
+            This method uses output filename to detect resulting type, same resolution as source and the same bitrate as source
+            </summary>
+            <param name="input"></param>
+            <param name="outputFile"></param>
+            <param name="caller">The WinForm that makes the call</param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.proc_Exited(System.Object,System.EventArgs)">
+            <summary>
+            Handles process exit
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VideoEncoder.Encoder.proc_ErrorDataReceived(System.Object,System.Diagnostics.DataReceivedEventArgs)">
+            <summary>
+            Handles process progress
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.GetFileName(System.String)">
+            <summary>
+            获取文件的名字
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.GetExtension(System.String)">
+            <summary>
+            获取文件扩展名
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.UploadVideo(System.Web.HttpPostedFile,System.Boolean,System.String,System.Nullable{System.Int32},System.Boolean,System.Boolean,Yunsoft.Common.Video.VideoModel@,System.String)">
+            <summary>
+            上传视频
+            </summary>
+            <param name="postFile"></param>
+            <param name="isConvert">是否进行格式转换</param>
+            <param name="savePath">视频保存的路径</param>
+            <param name="configSize">上传视频限制的大小</param>
+            <param name="isGetImg">是否获取视频缩略图</param>
+            <param name="isGetSpan">是否获取视频的时间</param>
+            <param name="model">返回处理结果</param>
+            <param name="extend">转换为哪种格式的视频 eg：".flv"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.ConvertFlv(System.String,System.String)">
+            <summary>
+            视频格式转换
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.CreateThumb(System.String,System.String)">
+            <summary>
+            视频截图
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.ConvertVideo.GetVideoTotalTime(System.String)">
+            <summary>
+            获得视频总时长
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.ConvertVideo.errorMessage">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.vid">
+            <summary>
+            视频ID
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.coverurl">
+            <summary>
+            缩略图地址
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.flash">
+            <summary>
+            播放器地址
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.title">
+            <summary>
+            视频标题
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.desc">
+            <summary>
+            视频描述信息
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.Ku6Info.type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.itemId">
+            <summary>
+            说明：视频ID
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.itemCode">
+            <summary>
+            说明：视频编码
+            备注：11位字符型编码,视频唯一标识
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.title">
+            <summary>
+            说明：视频标题
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.tags">
+            <summary>
+            说明：视频标签
+            备注：字符串,多个标签之间用逗号','分隔
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.description">
+            <summary>
+            说明：视频描述
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.picUrl">
+            <summary>
+            视频截图
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.picChoiceUrl">
+            <summary>
+            说明：视频备选截图
+            备注：URL地址字符串列表
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.totalTime">
+            <summary>
+            说明：视频时长
+            备注：单位毫秒
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.pubDate">
+            <summary>
+            说明：频发布时间
+            备注：指视频审核通过的发布时间,格式(yyyy-mm-dd)
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.ownerId">
+            <summary>
+            说明：播客id
+            备注：上传该视频的用户ID
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.ownerName">
+            <summary>
+             说明：播客名 
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.ownerNickname">
+            <summary>
+             说明：播客昵称
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.channelId">
+            <summary>
+             说明：所属频道ID
+             备注：对应的频道名称可查看:频道信息说明
+             http://api.tudou.com/apidoc/index.php/%E9%A2%91%E9%81%93%E4%BF%A1%E6%81%AF%E8%AF%B4%E6%98%8E
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.outerPlayerUrl">
+             说明：站外播放器URL
+             备注：该视频的独立播放地址,可嵌入非土豆网站内容中提供播放
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.itemUrl">
+            <summary>
+             说明：播放页URL
+             备注：该视频的土豆网站播放地址
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.mediaType">
+            <summary>
+             说明：媒体类型
+             备注：视频"或"音频"
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.secret">
+            <summary>
+             说明：视频是否加密
+             备注：该视频播放时,若被加密,需要密码才能播放 
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.TuDouInfo.definition">
+            <summary>
+             说明：视频清晰度
+             备注：0:256p,1:360p,2:480p,3:720p 
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.VideoHelper.youKuJsonDataApiUrl">
+            <summary>
+            优库网返回json格式的视频信息的ApiUrl
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.VideoHelper.ku6XmlDataApiUrl">
+            <summary>
+            酷6网返回json格式的视频信息的ApiUrl
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.VideoHelper.IsYouKuVideoUrl(System.String)">
+            <summary>
+            判断是否为优酷视频链接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Video.VideoHelper.GetYouKuVideoId(System.String)">
+            <summary>
+            得到优库视频ID
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.Video.VideoHelper.GetYouKuInfo(System.String)">
+            <summary>
+            得到优库视频信息
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Video.VideoHelper.IsKu6VideoUrl(System.String)">
+            <summary>
+            判断是否是酷6视频链接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.Video.VideoHelper.GetKu6Info(System.String)">
+            <summary>
+            得到Ku6视频信息
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Yunsoft.Common.Video.VideoModel.SavePath">
+            <summary>
+            视频保存路径
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.VideoModel.ImgPath">
+            <summary>
+            截图保存地址
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Common.Video.VideoModel.VideoSpan">
+            <summary>
+            视频长度
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.YouKuInfo.videoid">
+            <summary>
+            视频ID
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.YouKuInfo.vidEncoded">
+            <summary>
+            视频ID
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.YouKuInfo.title">
+            <summary>
+            视频标题
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Common.Video.YouKuInfo.logo">
+            <summary>
+            截图地址
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Common.WaterMark">
+            <summary>
+            图片水印
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.WaterMark.addWatermarkText(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            文字水印
+            </summary>
+            <param name="picture">添加水印的图片</param>
+            <param name="_watermarkText">水印文字</param>
+            <param name="_watermarkPosition">水印位置</param>
+            <param name=" image.Width">宽度</param>
+            <param name="image.Height">高度</param>
+        </member>
+        <member name="M:Yunsoft.Common.WaterMark.addWatermarkImage(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            图片水印
+            </summary>
+            <param name="picture">添加水印的图片</param>
+            <param name="WaterMarkPicPath">水印图片</param>
+            <param name="_watermarkPosition">水印位置</param>
+            <param name=" image.Width">宽度</param>
+            <param name="image.Height">高度</param>
+        </member>
+        <member name="T:Yunsoft.Common.XmlHelper">
+            <summary>
+            XML操作辅助类
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.CreateXmlDocument(System.String,System.String,System.String)">
+            <summary>
+            创建一个带有根节点的Xml文件
+            </summary>
+            <param name="FileName">Xml文件名称</param>
+            <param name="rootName">根节点名称</param>
+            <param name="Encode">编码方式:gb2312，UTF-8等常见的</param>
+            <param name="DirPath">保存的目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.InsertNode(System.String,System.String,System.Boolean,System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            插入一个节点和它的若干子节点
+            </summary>
+            <param name="XmlFile">Xml文件路径</param>
+            <param name="NewNodeName">插入的节点名称</param>
+            <param name="HasAttributes">此节点是否具有属性，True为有，False为无</param>
+            <param name="fatherNode">此插入节点的父节点</param>
+            <param name="htAtt">此节点的属性，Key为属性名，Value为属性值</param>
+            <param name="htSubNode">子节点的属性，Key为Name,Value为InnerText</param>
+            <returns>返回真为更新成功，否则失败</returns>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.UpdateNode(System.String,System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            更新节点
+            </summary>
+            <param name="XmlFile">Xml文件路径</param>
+            <param name="fatherNode">需要更新节点的上级节点</param>
+            <param name="htAtt">需要更新的属性表，Key代表需要更新的属性，Value代表更新后的值</param>
+            <param name="htSubNode">需要更新的子节点的属性表，Key代表需要更新的子节点名字Name,Value代表更新后的值InnerText</param>
+            <returns>返回真为更新成功，否则失败</returns>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.DeleteNodes(System.String,System.String)">
+            <summary>
+            删除指定节点下的子节点
+            </summary>
+            <param name="XmlFile">Xml文件路径</param>
+            <param name="fatherNode">制定节点</param>
+            <returns>返回真为更新成功，否则失败</returns>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.SetAttributes(System.Xml.XmlElement,System.Collections.Hashtable)">
+            <summary>
+            设置节点属性
+            </summary>
+            <param name="xe">节点所处的Element</param>
+            <param name="htAttribute">节点属性，Key代表属性名称，Value代表属性值</param>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.SetNodes(System.String,System.Xml.XmlDocument,System.Xml.XmlElement,System.Collections.Hashtable)">
+            <summary>
+            增加子节点到根节点下
+            </summary>
+            <param name="rootNode">上级节点名称</param>
+            <param name="XmlDoc">Xml文档</param>
+            <param name="rootXe">父根节点所属的Element</param>
+            <param name="SubNodes">子节点属性，Key为Name值，Value为InnerText值</param>
+        </member>
+        <member name="M:Yunsoft.Common.XmlHelper.UpdateNodes(System.Xml.XmlNodeList,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            更新节点属性和子节点InnerText值
+            </summary>
+            <param name="root">根节点名字</param>
+            <param name="htAtt">需要更改的属性名称和值</param>
+            <param name="htSubNode">需要更改InnerText的子节点名字和值</param>
+        </member>
+    </members>
+</doc>

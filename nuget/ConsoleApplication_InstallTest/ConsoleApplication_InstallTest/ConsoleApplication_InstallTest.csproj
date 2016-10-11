@@ -46,13 +46,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Yunsoft.Json, Version=1.0.0.34812, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yunsoft.Json.1.0.0.34812\lib\net40\Yunsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Yunsoft.Json.RPC, Version=1.0.0.36601, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yunsoft.Json.RPC.1.0.0.36601\lib\net40\Yunsoft.Json.RPC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

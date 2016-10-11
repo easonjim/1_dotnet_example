@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using Easemob.Restfull4Net;
 using Easemob.Restfull4Net.Entity.Request;
+using Yunsoft.Json;
 
 namespace ConsoleApplication_InstallTest
 {
@@ -22,7 +23,9 @@ namespace ConsoleApplication_InstallTest
 
         static void Main(string[] args)
         {
-            //单个创建
+            var json = new JsonObject();
+            json.Put("a","b");
+            /*//单个创建
             var syncRequest = Client.DefaultSyncRequest;
 
             var user = syncRequest.UserCreate(new UserCreateReqeust()
@@ -31,7 +34,7 @@ namespace ConsoleApplication_InstallTest
                 password = "123456",
                 username = string.Concat("Test", _userName),
             });
-            System.Console.Write((user.StatusCode == HttpStatusCode.OK).ToString());
+            System.Console.Write((user.StatusCode == HttpStatusCode.OK).ToString());*/
         }
     }
 }

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07BD827B-C6E4-449D-A6AC-415B81329578}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>ClassLibrary1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBatisNet.Common, Version=1.4.1.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\IBatisNet.1.4.1\lib\net40\IBatisNet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper, Version=1.5.1.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\IBatisNet.1.4.1\lib\net40\IBatisNet.DataMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=1.0.0.30247, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.1.0.0.30247\lib\net40\Senparc.Weixin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=1.0.0.31016, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.MP.1.0.0.31016\lib\net40\Senparc.Weixin.MP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yunsoft.Common, Version=1.0.0.3937, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yunsoft.Common.1.0.0.3937\lib\net40\Yunsoft.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Yunsoft.DBUtility, Version=1.0.0.27928, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yunsoft.DBUtility.1.0.0.27928\lib\net40\Yunsoft.DBUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Yunsoft.Json, Version=1.0.0.36060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yunsoft.Json.1.0.0.36060\lib\net40\Yunsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdvancedAPIs\Card\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

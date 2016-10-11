@@ -5,4 +5,7 @@ E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\Con
 E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\ConsoleApplication_InstallTest.exe.config
 E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Easemob.Restfull4Net.dll
 E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Easemob.Restfull4Net.xml
-E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\obj\x86\Debug\ConsoleApplication_InstallTest.csprojResolveAssemblyReference.cache
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Yunsoft.Json.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Yunsoft.Json.RPC.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Yunsoft.Json.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ConsoleApplication_InstallTest\bin\Debug\Yunsoft.Json.RPC.xml

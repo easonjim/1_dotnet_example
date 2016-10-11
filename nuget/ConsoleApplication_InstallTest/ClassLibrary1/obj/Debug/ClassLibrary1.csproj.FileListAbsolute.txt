@@ -1,0 +1,17 @@
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\IBatisNet.Common.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\IBatisNet.DataMapper.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\MySql.Data.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Senparc.Weixin.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Senparc.Weixin.MP.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.Common.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.DBUtility.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.Json.dll
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Senparc.Weixin.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Senparc.Weixin.MP.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.Common.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.DBUtility.xml
+E:\开发工程\GitHub\1_dotnet_example\nuget\ConsoleApplication_InstallTest\ClassLibrary1\bin\Debug\Yunsoft.Json.xml

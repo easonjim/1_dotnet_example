@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yunsoft.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:Yunsoft.Controls.CheckBoxColumn">
+            <summary>
+            多选列 基于BoundField
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.DeleteImageLinkButton">
+            <summary>
+            删除按钮 基于ImageLinkButton
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.ImageLinkButton">
+            <summary>
+            图片按钮扩展类 基于LinkButton
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Web.Controls.GridViewExBase.SortTip">
+            <summary>
+            排序提示信息
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Web.Controls.GridViewExBase.ShowExportWord">
+            <summary>
+            排序提示信息
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.ImagePosition">
+            <summary>
+            图片位置
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.CheckBoxListExtensions.CheckBoxList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem})">
+            <summary>
+            CheckBoxList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">SelectListItem.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.CheckBoxListExtensions.CheckBoxList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Object)">
+            <summary>
+            CheckBoxList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">SelectListItem.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.CheckBoxListExtensions.CheckBoxList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            CheckBoxList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="number">每个Row的显示个数.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.CheckBoxListExtensions.CheckBoxListVertical(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            Checks the box list vertical.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.CheckBoxListExtensions.CheckBoxList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},Yunsoft.Controls.MVC.Position,System.Int32)">
+            <summary>
+            Checks the box list.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="position">The position.</param>
+            <param name="number">每行/每列个数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.RadioButtonList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem})">
+            <summary>
+            RadioButtonList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">RadioButtonListInfo.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.RadioButtonList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Object)">
+            <summary>
+            RadioButtonList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">RadioButtonListInfo.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.RadioButtonList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            RadioButtonList.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="number">每个Row的显示个数.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.RadioButtonVertical(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            Checks the box list vertical.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.RadioButtonList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object},Yunsoft.Controls.MVC.Position,System.Int32)">
+            <summary>
+            Checks the box list.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="name">The name.</param>
+            <param name="listInfo">The list info.</param>
+            <param name="htmlAttributes">The HTML attributes.</param>
+            <param name="position">The position.</param>
+            <param name="number">每行/每列个数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.MVC.RadioButtonListExtensions.CreateRadioButtonItem(System.Web.Mvc.SelectListItem,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            CreateRadioButtonItem
+            </summary>
+            <param name="info"></param>
+            <param name="name"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Controls.PayInterfaceDropDownList">
+            <summary>
+            支付模块 支付接口下拉列表扩展类
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.SortImageColumn">
+            <summary>
+            排序图片按钮控件 基于ImageField
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Web.Controls.SortTip.DescImg">
+            <summary>
+            降序提示图片
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Web.Controls.SortTip.AscImg">
+            <summary>
+            升序提示图片
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.StatusMessage">
+            <summary>
+            页面状态信息控件 基于LiteralControl
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.FileUploadEx">
+            <summary>
+            上传图片控件 基于WebControl
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.WebControl">
+            <summary>
+            Yunsoft WebControl 基类
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.IWebControl">
+            <summary>
+            WebControl接口
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.IWebControl.HintTitle">
+            <summary>
+            提示框标题
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.IWebControl.HintInfo">
+            <summary>
+            提示框内容
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.IWebControl.HintLeftOffSet">
+            <summary>
+            提示框左侧偏移量
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.IWebControl.HintTopOffSet">
+            <summary>
+            提示框顶部偏移量
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.IWebControl.HintHeight">
+            <summary>
+            提示框高度
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintTitle">
+            <summary>
+            提示框标题
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintInfo">
+            <summary>
+            提示框内容
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintLeftOffSet">
+            <summary>
+            提示框左侧偏移量
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintTopOffSet">
+            <summary>
+            提示框顶部偏移量
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintShowType">
+            <summary>
+            提示框风格,up(上方显示)或down(下方显示)
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.WebControl.HintHeight">
+            <summary>
+            提示框高度
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Controls.FileUploadEx.txt">
+            <summary>
+            TextBox 控件变量
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Controls.FileUploadEx.lblMsg">
+            <summary>
+            Label 控件变量
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Controls.FileUploadEx.btnUpload">
+            <summary>
+            Button 控件变量
+            </summary>
+        </member>
+        <member name="F:Yunsoft.Controls.FileUploadEx.fileUpload">
+            <summary>
+            FileUpload控件变量
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            输出html,在浏览器中显示控件
+            </summary>
+            <param name="output"> 要写出到的 HTML 编写器 </param>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.CreateChildControls">
+            <summary>
+            创建子控件
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.CreateFolder(System.String)">
+            <summary>
+             创建文件夹
+            </summary>
+            <param name="path">路径</param>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.UpdateFile">
+            <summary>
+            上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.UpFile_Click(System.Object,System.EventArgs)">
+            <summary>
+            上传单击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Yunsoft.Controls.FileUploadEx.GetThumbnailImage(System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            生成缩略图函数
+            </summary>
+            <param name="width">原始图片的宽度</param>
+            <param name="height">原始图片的高度</param>
+            <param name="left">水印字符的生成位置</param>
+            <param name="right">水印字符的生成位置</param>
+            <param name="picpath">原图的所在路径</param>
+            <param name="picthumpath">生成缩略图的所在路径</param>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.Text">
+            <summary>
+            文件内容属性
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.WaterMarkText">
+            <summary>
+            进行水印所使用的文字
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.UpFilePath">
+            <summary>
+            要上传的文件路径
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.HttpPath">
+            <summary>
+            上传后所记入数据库时所引用的路径
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.FileType">
+            <summary>
+            要上传的文件的类型，如：.gif , .jpg , .png
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.IsThumbnailImage">
+            <summary>
+            是否生成缩略图
+            </summary>
+        </member>
+        <member name="P:Yunsoft.Controls.FileUploadEx.IsShowTextArea">
+            <summary>
+            是否显示上传的文本框
+            </summary>
+        </member>
+        <member name="T:Yunsoft.Controls.ThumbnailImageConverter">
+            <summary>
+            缩略图选项转换器
+            </summary>
+        </member>
+        <member name="M:Yunsoft.Controls.ThumbnailImageConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            下拉列表编辑属性 
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.ThumbnailImageConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            获取标准值列表
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yunsoft.Controls.ThumbnailImageConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            return ture的话只能选，return flase可选可填 
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yunsoft.Controls.YesNoRadioButtonList">
+            <summary>
+            Yes or No 单选按钮 基于RadioButtonList
+            </summary>
+        </member>
+    </members>
+</doc>
