@@ -1,0 +1,1827 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Easemob.Restfull4Net</name>
+    </assembly>
+    <members>
+        <member name="T:Easemob.Restfull4Net.Client">
+            <summary>
+            请求客户端
+            说明：实现快速创建实例
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Client.ServerConfigs">
+            <summary>
+            配置节点集合，EasemobServer和Custom的集合
+            说明，key为appname
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Client.SyncRequests">
+            <summary>
+            多个请求客户端的同步请求
+            说明：key为appname
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Client.DefaultSyncRequest">
+            <summary>
+            默认读取第一个配置的SyncRequest
+            说明：读取顺序EasemobServer->Custom
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Client.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Client.FillEasemobServerConfigSection">
+            <summary>
+            填充EasemobServer配置节点
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Client.FillCustomerConfig">
+            <summary>
+            填充Custom自定义配置节点
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Client.InstantiateSyncRequest">
+            <summary>
+            实例化SyncRequest
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Common.ContentType">
+            <summary>
+            MIME type of the body of the request or response
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Common.ContentTypeExtensions.GetMetadata(Easemob.Restfull4Net.Common.ContentType)">
+            <summary>
+            Returns the ContentTypeMetadata for the given content type
+            </summary>
+            <param name="ct"></param>
+            <returns>ContentTypeMetadata</returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Common.ContentTypeExtensions.ToValue(Easemob.Restfull4Net.Common.ContentType)">
+            <summary>
+            Returns the mime type and subtype string from the Value property of the ContentTypeMetadata
+            </summary>
+            <param name="ct"></param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Common.ContentTypeExtensions.IsText(Easemob.Restfull4Net.Common.ContentType)">
+            <summary>
+            Gets a value that indicates whether this mime type represents a text file
+            </summary>
+            <param name="ct"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Common.ContentTypeExtensions.IsBinary(Easemob.Restfull4Net.Common.ContentType)">
+            <summary>
+            Gets a value that indicates whether this mime type represents a binary file
+            </summary>
+            <param name="ct"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Common.ContentTypeMetadata">
+            <summary>
+            <para>Attribute for ContentType enumeration</para>
+            <para>Targets: Field</para>
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Common.ContentTypeMetadata.Value">
+            <summary>
+            String representation of the MIME type and subtype
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Common.ContentTypeMetadata.IsText">
+            <summary>
+            A value that indicates whether this mime type represents a text file
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Common.ContentTypeMetadata.IsBinary">
+            <summary>
+            A value that indicates whether this mime type represents a binary file
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Common.HttpMethod">
+            <summary>
+            HttpMethod
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Config.IServerConfig">
+            <summary>
+            配置文件接口
+            继承实现可选择配置：1实例、2配置section、3自定义配置config
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.ServerUrl">
+            <summary>
+            环信服务器地址
+            如：https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.OrgName">
+            <summary>
+            组织名
+            对应#前面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.AppName">
+            <summary>
+            应用名
+            对应#后面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.ClientId">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.ClientSecret">
+            <summary>
+            客户端密钥
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.HttpTimeOut">
+            <summary>
+            请求超时设置（以毫秒为单位）
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.IsDebug">
+            <summary>
+            是否为调试模式
+            说明：如果为调试模式，将在程序主目录输出日志文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.IServerConfig.MaxJsonLength">
+            <summary>
+            JavaScriptSerializer类接受的JSON字符串的最大长度
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.DefaultServerUrl">
+            <summary>
+            默认环信服务器地址https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.DefaultHttpTimeOut">
+            <summary>
+            默认请求超时时间
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.DefaultIsDebug">
+            <summary>
+            默认为调试模式，直接输出日志
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.DefaultMaxJsonLength">
+            <summary>
+            默认JSON转化为最大值
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.ServerUrl">
+            <summary>
+            环信服务器地址
+            如：https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.OrgName">
+            <summary>
+            组织名
+            对应#前面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.AppName">
+            <summary>
+            应用名
+            对应#后面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.ClientId">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.ClientSecret">
+            <summary>
+            客户端密钥
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.HttpTimeOut">
+            <summary>
+            请求超时设置（以毫秒为单位）
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.IsDebug">
+            <summary>
+            是否为调试模式
+            说明：如果为调试模式，将在程序主目录输出日志文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.Configuration.ServerConfigElement.MaxJsonLength">
+            <summary>
+            JavaScriptSerializer类接受的JSON字符串的最大长度
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Config.CustomServerConfig">
+            <summary>
+            自定义配置文件，可直接实例
+            说明：后续可参照此写法自定义实现
+            备注：此节点也可实现多个server，每个值使用|进行切割
+            在appsettings节点下添加自定义key
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.CustomServerConfig.DefaultServerUrl">
+            <summary>
+            默认环信服务器地址https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.CustomServerConfig.DefaultHttpTimeOut">
+            <summary>
+            默认请求超时时间
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.CustomServerConfig.DefaultIsDebug">
+            <summary>
+            默认为调试模式，直接输出日志
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.CustomServerConfig.DefaultMaxJsonLength">
+            <summary>
+            默认JSON转化为最大值
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.ServerUrl">
+            <summary>
+            环信服务器地址
+            如：https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.OrgName">
+            <summary>
+            组织名
+            对应#前面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.AppName">
+            <summary>
+            应用名
+            对应#后面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.ClientId">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.ClientSecret">
+            <summary>
+            客户端密钥
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.HttpTimeOut">
+            <summary>
+            请求超时设置（以毫秒为单位）
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.IsDebug">
+            <summary>
+            是否为调试模式
+            说明：如果为调试模式，将在程序主目录输出日志文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.CustomServerConfig.MaxJsonLength">
+            <summary>
+            JavaScriptSerializer类接受的JSON字符串的最大长度
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Config.ServerConfig">
+            <summary>
+            默认配置文件，可直接实例
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.ServerConfig.DefaultServerUrl">
+            <summary>
+            默认环信服务器地址https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.ServerConfig.DefaultHttpTimeOut">
+            <summary>
+            默认请求超时时间
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.ServerConfig.DefaultIsDebug">
+            <summary>
+            默认为调试模式，直接输出日志
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Config.ServerConfig.DefaultMaxJsonLength">
+            <summary>
+            默认JSON转化为最大值
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.ServerUrl">
+            <summary>
+            环信服务器地址
+            如：https://a1.easemob.com/
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.OrgName">
+            <summary>
+            组织名
+            对应#前面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.AppName">
+            <summary>
+            应用名
+            对应#后面部分
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.ClientId">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.ClientSecret">
+            <summary>
+            客户端密钥
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.HttpTimeOut">
+            <summary>
+            请求超时设置（以毫秒为单位）
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.IsDebug">
+            <summary>
+            是否为调试模式
+            说明：如果为调试模式，将在程序主目录输出日志文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Config.ServerConfig.MaxJsonLength">
+            <summary>
+            JavaScriptSerializer类接受的JSON字符串的最大长度
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserBlockAddRequest.owner_username">
+            <summary>
+            要添加黑名单的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserBlockAddRequest.usernames">
+            <summary>
+            被添加黑名单的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserBlockDeleteRequest.owner_username">
+            <summary>
+            要删除黑名单的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserBlockDeleteRequest.blocked_username">
+            <summary>
+            被删除黑名单的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserFriendDeleteRequest.owner_username">
+            <summary>
+            要删除好友的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserFriendDeleteRequest.friend_username">
+            <summary>
+            被删除的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserFriendAddRequest.owner_username">
+            <summary>
+            要添加好友的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.UserFriendAddRequest.friend_username">
+            <summary>
+            被添加的用户名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.BaseResponse.StatusCode">
+            <summary>
+            状态码，详见：http://docs.easemob.com/start/450errorcode/10restapierrorcode
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.BaseResponse.ErrorMessage">
+            <summary>
+            错误信息，详见：http://docs.easemob.com/start/450errorcode/10restapierrorcode
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsgPayload.ext">
+            <summary>
+            扩展消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.msg">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.type">
+            <summary>
+            txt: 文本消息；img: 图片；loc: 位置；audio: 语音
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.length">
+            <summary>
+            语音时长，单位为秒，这个属性只有语音消息有
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.url">
+            <summary>
+            图片语音等文件的网络URL，图片和语音消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.secret">
+            <summary>
+            获取文件的secret，图片和语音消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.lat">
+            <summary>
+            发送的位置的纬度，只有位置消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.lng">
+            <summary>
+            位置经度，只有位置消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.addr">
+            <summary>
+            位置消息详细地址，只有位置消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.filename">
+            <summary>
+            文件名字，图片和语音消息有这个属性
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.thumb">
+            <summary>
+            上传缩略图地址
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Response.ChatMsg.thumb_secret">
+            <summary>
+            thumb_secret在上传缩略图后会返回
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgRequest`1.target_type">
+            <summary>
+            users 给用户发消息。chatgroups: 给群发消息，chatrooms: 给聊天室发消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgRequest`1.target">
+            <summary>
+            注意这里需要用数组，数组长度建议不大于20，即使只有一个用户，也要用数组 ['u1']，给用户发送时数组元素是用户名，给群组发送时数组元素是groupid
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgRequest`1.msg">
+            <summary>
+            消息类型及消息内容
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgRequest`1.from">
+            <summary>
+            表示消息发送者。无此字段Server会默认设置为"from":"admin"，有from字段但值为空串("")时请求失败
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgRequest`1.ext">
+            <summary>
+            扩展属性，由APP自己定义。可以没有这个字段，但是如果有，值不能是"ext:null"这种形式，否则出错
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.BaseMsg">
+            <summary>
+            消息基类，确定类型
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.BaseMsg.type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgText">
+            <summary>
+            文本消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgText.msg">
+            <summary>
+            消息内容，参考[[start:100serverintegration:30chatlog|聊天记录]]里的bodies内容
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgImg">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgImg.url">
+            <summary>
+            "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/55f12940-64af-11e4-8a5b-ff2336f03252",成功上传文件返回的UUI
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgImg.filename">
+            <summary>
+            "24849.jpg",指定一个文件名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgImg.secret">
+            <summary>
+            "VfEpSmSvEeS7yU8dwa9rAQc-DIL2HhmpujTNfSTsrDt6eNb_",成功上传文件后返回的secret
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgImg.size">
+            <summary>
+            {"width" : 480,"height" : 720},图片大小
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgImgSize">
+            <summary>
+            图片消息的图片大小
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgAudio">
+            <summary>
+            语言消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgAudio.url">
+            <summary>
+            "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/1dfc7f50-55c6-11e4-8a07-7d75b8fb3d42",成功上传文件返回的UUID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgAudio.filename">
+            <summary>
+            "messages.amr",指定一个文件名
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgAudio.secret">
+            <summary>
+            "Hfx_WlXGEeSdDW-SuX2EaZcXDC7ZEig3OgKZye9IzKOwoCjM",成功上传文件后返回的secret
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgAudio.length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgVideo">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.url">
+            <summary>
+             "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/671dfe30-7f69-11e4-ba67-8fef0d502f46",成功上传视频文件返回的UUID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.filename">
+            <summary>
+            "1418105136313.mp4",视频文件名称
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.secret">
+            <summary>
+            "VfEpSmSvEeS7yU8dwa9rAQc-DIL2HhmpujTNfSTsrDt6eNb_",成功上传视频文件后返回的secret
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.thumb">
+            <summary>
+            "https://a1.easemob.com/easemob-demo/chatdemoui/chatfiles/67279b20-7f69-11e4-8eee-21d3334b3a97",成功上传视频缩略图返回的UUID
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.length">
+            <summary>
+            视频播放长度
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.file_length">
+            <summary>
+            视频文件大小
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgVideo.thumb_secret">
+            <summary>
+            "ZyebKn9pEeSSfY03ROk7ND24zUf74s7HpPN1oMV-1JxN2O2I",成功上传视频缩略图后返回的secret
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Entity.Request.MsgAction">
+            <summary>
+            透传消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Entity.Request.MsgAction.action">
+            <summary>
+            内容，可以指定json字符串
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Helper.CacheHelper">
+            <summary>
+            缓存相关的操作类
+            Copyright (C)     
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Helper.CacheHelper.Cache">
+            <summary>
+            HttpRuntime.Cache对象
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Clear">
+            <summary>
+            清除所有缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Get(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.GetAll">
+            <summary>
+            获取所有缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object)">
+            <summary>
+            插入缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object,System.Int32)">
+            <summary>
+            插入缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            插入缓存，依赖CacheDependency
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object,System.Int32,System.Web.Caching.CacheItemPriority)">
+            <summary>
+            插入缓存，设置优先级CacheItemPriority
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object,System.Web.Caching.CacheDependency,System.Int32)">
+            <summary>
+            插入缓存，依赖CacheDependency
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Insert(System.String,System.Object,System.Web.Caching.CacheDependency,System.Int32,System.Web.Caching.CacheItemPriority)">
+            <summary>
+            插入缓存，依赖CacheDependency，设置优先级CacheItemPriority
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Max(System.String,System.Object)">
+            <summary>
+            插入缓存，时间最大
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Max(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            插入缓存，时间最大，依赖CacheDependency
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.Remove(System.String)">
+            <summary>
+            清除缓存
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.CacheHelper.RemoveByPattern(System.String)">
+            <summary>
+            清除缓存，指定正则
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Helper.ConfigHelper">
+            <summary>
+            web.config操作类
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConfigHelper.GetConfigString(System.String)">
+            <summary>
+            得到AppSettings中的配置字符串信息
+            兼容web.config和app.config
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConfigHelper.GetConfigBool(System.String)">
+            <summary>
+            得到AppSettings中的配置Bool信息
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConfigHelper.GetConfigDecimal(System.String)">
+            <summary>
+            得到AppSettings中的配置Decimal信息
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConfigHelper.GetConfigInt(System.String)">
+            <summary>
+            得到AppSettings中的配置int信息
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.SafeEnum``1(System.String,``0)">
+            <summary>
+            将枚举数值or枚举名称 安全转换为枚举对象
+            </summary>
+            <typeparam name="T">枚举类型</typeparam>
+            <param name="value">数值or名称</param>
+            <param name="defaultValue">默认值</param>
+            <remarks>转换区分大小写</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.SafeEnum``1(System.String,``0,System.Boolean)">
+            <summary>
+            将枚举数值or枚举名称 安全转换为枚举对象
+            </summary>
+            <typeparam name="T">枚举类型</typeparam>
+            <param name="value">数值or名称</param>
+            <param name="defaultValue">默认值</param>
+            <param name="ignoreCase">是否忽略大小写 true 不区分大小写 | false 区分大小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.IsNullOrEmpty(System.String)">
+            <summary>
+            检查字符串是否是 null 或者空白字符,不同于.net自带的string.IsNullOrEmpty，多个空格在这里也返回true。
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Easemob.Restfull4Net.Helper.ConvertHelper.GetQueryString(System.Collections.Generic.Dictionary{System.String,System.Object})”忽略有格式错误的 XML 注释 -->
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.GetQueryJsonString(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            组装QueryJsonString的方法
+            JSON形式的提交参数
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.GetQueryJsonString(System.IO.Stream)">
+            <summary>
+            组装QueryJsonString的方法
+            JSON形式的提交参数
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.GetQueryJsonString``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            组装QueryJsonString的方法
+            JSON形式的提交参数
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.FillFormDataStream(System.Collections.Generic.Dictionary{System.String,System.Object},System.IO.Stream)">
+            <summary>
+            填充表单信息的Stream
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.FillFormDataStream``1(System.Collections.Generic.IList{``0},System.IO.Stream)">
+            <summary>
+            填充表单信息的Stream，JSON的形式
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.FillFormDataJsonStream(System.Collections.Generic.Dictionary{System.String,System.Object},System.IO.Stream)">
+            <summary>
+            填充表单信息的Stream，JSON的形式
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.HtmlEncode(System.String)">
+            <summary>
+            封装System.Web.HttpUtility.HtmlEncode
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.HtmlDecode(System.String)">
+            <summary>
+            封装System.Web.HttpUtility.HtmlDecode
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.UrlEncode(System.String)">
+            <summary>
+            封装System.Web.HttpUtility.UrlEncode
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ConvertHelper.UrlDecode(System.String)">
+            <summary>
+            封装System.Web.HttpUtility.UrlDecode
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Easemob.Restfull4Net.Helper.ConvertHelper.AsUrlData(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Easemob.Restfull4Net.Helper.DateTimeHelper.GetDateTime(System.Int64)">
+            <summary>
+            转换时间戳到C#时间
+            </summary>
+            <param name="timeStamp">时间戳</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.DateTimeHelper.GetDateTime(System.String)">
+            <summary>
+            转换时间戳到C#时间
+            </summary>
+            <param name="timeStamp">时间戳</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.DateTimeHelper.GetTimeStamp(System.DateTime)">
+            <summary>
+            获取时间戳（UNIX时间戳）
+            </summary>
+            <param name="dateTime">时间</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.FileHelper.GetFileStream(System.String)">
+            <summary>
+            根据完整文件路径获取FileStream
+            说明：用完需关闭
+            </summary>
+            <param name="filePath">文件物理路径</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.FileHelper.GetFileInfo(System.String)">
+            <summary>
+            得到文件信息
+            </summary>
+            <param name="filePath">相对路径</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ObjectJsonHelper.CreateString``1(Easemob.Restfull4Net.Helper.ObjectJsonItem{``0}[])">
+            <summary>
+            创建字符串
+            </summary>
+            <typeparam name="T">转换的实体</typeparam>
+            <param name="objectJsonItems">ObjectJsonItem</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ObjectJsonHelper.CreateDictionary``2(Easemob.Restfull4Net.Helper.ObjectJsonItem{``0}[])">
+            <summary>
+            创建字典
+            </summary>
+            <typeparam name="T">转换的实体</typeparam>
+            <typeparam name="T1">要序列化的类型</typeparam>
+            <param name="objectJsonItems">ObjectJsonItem</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.ObjectJsonHelper.GetPropertyName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            获取属性名称
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Helper.LogTraceHelper">
+            <summary>
+            日志跟踪
+            说明：采用TraceListener
+            执行顺序：Open->LogBegin->Log->LogEnd-Close
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Helper.LogTraceHelper.OnLogFunc">
+            <summary>
+            执行所有日志记录操作时执行的任务（发生在LogEnd记录日志之后）
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Open(System.String)">
+            <summary>
+            打开日志访问
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Close">
+            <summary>
+            关闭日志访问
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.TimeLog">
+            <summary>
+            统一时间格式
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Unindent">
+            <summary>
+            减少一格缩进
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Indent">
+            <summary>
+            增加一格缩进
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Flush">
+            <summary>
+            刷新输出缓冲区
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.LogBegin(System.String,System.String)">
+            <summary>
+            开始写日志
+            </summary>
+            <param name="title">标题</param>
+            <param name="logFilePath">日志文件存放文件夹</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.Log(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="message">内容</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.LogEnd(System.String,System.String,System.String)">
+            <summary>
+            结束写日志
+            </summary>
+            <param name="title">标题</param>
+            <param name="type">类型</param>
+            <param name="message">内容</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Helper.LogTraceHelper.SendLog(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            日志输出统一方法
+            </summary>
+            <param name="path">文本路径，如URL，程序集地址等</param>
+            <param name="content">内容</param>
+            <param name="type">类型</param>
+            <param name="startTitle">开始的标题</param>
+            <param name="endTitle">结束的标题</param>
+            <param name="logFilePath">日志存放文件夹</param>
+            <param name="isDebug">是否为Debug，默认为false</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Request.AsyncRequest">
+            <summary>
+            异步请求
+            TODO：后续封装
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Request.BaseRequest">
+            <summary>
+            请求基类
+            </summary>
+        </member>
+        <member name="F:Easemob.Restfull4Net.Request.BaseRequest.ServerConfig">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.BaseRequest.#ctor(Easemob.Restfull4Net.Config.IServerConfig)">
+            <summary>
+            通过IServerConfig对象进行构造连接
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.BaseRequest.GetToken">
+            <summary>
+            获取Token，子类必须实现
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.HeaderDictionary">
+            <summary>
+            自定义标记头
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.TokenCacheKey">
+            <summary>
+            token缓存key
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlBase">
+            <summary>
+            拼装带有org的http链接
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetToken">
+            <summary>
+            获取Token的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlCreateUsers">
+            <summary>
+            注册 IM 用户的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetUser">
+            <summary>
+            获取 IM 用户[单个]的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetUsers">
+            <summary>
+            获取 IM 用户[批量]的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlDeleteUser">
+            <summary>
+            删除 IM 用户[单个]的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlDeleteUsers">
+            <summary>
+            删除 IM 用户[批量]的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlRestPassword">
+            <summary>
+            重置 IM 用户密码的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlRestNickName">
+            <summary>
+            修改用户昵称的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlAddFriend">
+            <summary>
+            给 IM 用户添加好友的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlDeleteFriend">
+            <summary>
+            解除 IM 用户的好友关系的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetFriend">
+            <summary>
+            查看好友的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetBlock">
+            <summary>
+            获取 IM 用户的黑名单的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlAddBlock">
+            <summary>
+            往 IM 用户的黑名单中加人的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlDeleteBlock">
+            <summary>
+            从 IM 用户的黑名单中减人的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetStatus">
+            <summary>
+            查看用户在线状态的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetOfflineMsgCount">
+            <summary>
+            查询离线消息数的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlGetOfflineMsgStatus">
+            <summary>
+            查询某条离线消息状态的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlSetUserDeactivate">
+            <summary>
+            用户账号禁用的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlSetUserActivate">
+            <summary>
+            用户账号解禁的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlSetUserDisconnect">
+            <summary>
+            强制用户下线的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlExportChatMsg">
+            <summary>
+            导出聊天记录的URL
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlSendMsg">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlUploadFiles">
+            <summary>
+            上传语音/图片文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlDownloadFiles">
+            <summary>
+            下载语音/图片文件
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsGet">
+            <summary>
+            获取 APP 中所有的群组
+            分页获取 APP 下的群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsGetByLimit">
+            <summary>
+            分页获取 APP 下的群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsDetails">
+            <summary>
+            获取群组详情
+            可以获取一个或多个群组的详情
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsCreate">
+            <summary>
+            创建一个群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUpdate">
+            <summary>
+            修改群组信息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsDelete">
+            <summary>
+            删除群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUserAdd">
+            <summary>
+            添加群组成员[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUserBatchAdd">
+            <summary>
+            添加群组成员[批量]
+            为群组添加多个成员，一次最多可以添加60位成员。
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUserDelete">
+            <summary>
+            移除群组成员[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUserBatchDelete">
+            <summary>
+            移除群组成员[批量]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsUserJoin">
+            <summary>
+            获取一个用户参与的所有群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsTran">
+            <summary>
+            转让群组
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsBlockUserGet">
+            <summary>
+            查询群组黑名单
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsBlockUserAdd">
+            <summary>
+            添加用户至群组黑名单[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsBlockUserBatchAdd">
+            <summary>
+            添加用户至群组黑名单[批量]
+            添加多个用户进入一个群组的黑名单，一次性最多可以添加60个用户
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsBlockUserDelete">
+            <summary>
+            从群组黑名单移除用户[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatGroupsBlockUserBatchDelete">
+            <summary>
+            从群组黑名单移除用户[批量]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsCreate">
+            <summary>
+            创建聊天室
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUpdate">
+            <summary>
+            修改聊天室信息
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsDelete">
+            <summary>
+            删除聊天室
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsGet">
+            <summary>
+            获取 APP 中所有的聊天室
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsDetails">
+            <summary>
+            获取一个聊天室详情
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUserJoin">
+            <summary>
+            获取用户加入的聊天室
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUserAdd">
+            <summary>
+            添加聊天室成员[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUserBatchAdd">
+            <summary>
+            添加聊天室成员[批量]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUserDelete">
+            <summary>
+            删除聊天室成员[单个]
+            </summary>
+        </member>
+        <member name="P:Easemob.Restfull4Net.Request.BaseRequest.UrlChatRoomsUserBatchDelete">
+            <summary>
+            删除聊天室成员[批量]
+            </summary>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Request.SyncRequest">
+            <summary>
+            同步请求
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.GetToken">
+            <summary>
+            获取授权token
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.TryToken">
+            <summary>
+            刷新token的缓存，再重新获取token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.SetToken(System.String)">
+            <summary>
+            自定义设置token
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserCreate(Easemob.Restfull4Net.Entity.Request.UserCreateReqeust,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            注册 IM 用户[单个]
+            </summary>
+            <param name="userCreateReqeust">UserCreateReqeust</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserCreate(System.Collections.Generic.List{Easemob.Restfull4Net.Entity.Request.UserCreateReqeust},System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            注册 IM 用户[单个]
+            </summary>
+            <param name="userCreateReqeusts">UserCreateReqeust</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserGet(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            获取 IM 用户[单个]
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserGetByLimit(System.Int32,System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            获取 IM 用户[批量]
+            </summary>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="limit">获取数量</param>
+            <param name="cursor">游标</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserDelete(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            删除 IM 用户[单个]
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserDeleteByLimit(System.Int32,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+             删除 IM 用户[批量]
+            </summary>
+            <param name="limit">数量</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserRestPassword(Easemob.Restfull4Net.Entity.Request.UserPasswordRestRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            重置 IM 用户密码
+            </summary>
+            <param name="request">UserResetPasswordRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserRestNickName(Easemob.Restfull4Net.Entity.Request.UserNickNameRestRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            修改用户昵称
+            </summary>
+            <param name="request">UserResetNickNameRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserFriendAdd(Easemob.Restfull4Net.Entity.Request.UserFriendAddRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            给 IM 用户添加好友
+            </summary>
+            <param name="userFriendAddRequest">UserFriendAddRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserFriendDelete(Easemob.Restfull4Net.Entity.Request.UserFriendDeleteRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            解除 IM 用户的好友关系
+            </summary>
+            <param name="userFriendDeleteRequest">UserFriendDeleteRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserFriendGet(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            查看好友
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserBlockGet(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            获取 IM 用户的黑名单
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserBlockAdd(Easemob.Restfull4Net.Entity.Request.UserBlockAddRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            往 IM 用户的黑名单中加人
+            </summary>
+            <param name="userBlockAddRequest">UserBlockAddRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserBlockDelete(Easemob.Restfull4Net.Entity.Request.UserBlockDeleteRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            从 IM 用户的黑名单中减人
+            </summary>
+            <param name="userBlockDeleteRequest">UserBlockDeleteRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserStatusGet(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            查看用户在线状态
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserOfflineMsgCountGet(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            查询离线消息数
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserOfflineMsgStatust(Easemob.Restfull4Net.Entity.Request.UserOfflineMsgStatusGetRequest,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            查询某条离线消息状态
+            </summary>
+            <param name="request">UserOfflineMsgStatusGetRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserSetDeactivate(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            用户账号禁用
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserSetActivate(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            账号禁用与解禁
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.UserSetDisconnect(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            强制用户下线
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.ChatMsgExport(System.String,System.Nullable{System.Int32},System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            获取聊天记录
+            </summary>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="ql">条件，已对空格做了+号处理，详见：http://docs.easemob.com/start/100serverintegration/30chatlog</param>
+            <param name="limit">获取数量,max:1000</param>
+            <param name="cursor">游标</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.MsgSend``1(Easemob.Restfull4Net.Entity.Request.MsgRequest{``0},System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="msgRequest">MsgRequest</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.ChatFileUpload(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            上传语音/图片文件
+            </summary>
+            <param name="filePath">文件本地绝对路径</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+            <param name="tryCount">失败重试次数，默认为0</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.ChatFileDownload(System.String,System.String,System.IO.Stream,System.Nullable{System.Int32})">
+            <summary>
+            下载语音/图片文件
+            </summary>
+            <param name="shareSecret">上传资源时返回的share-secret</param>
+            <param name="uuid">上传资源时返回的uuid</param>
+            <param name="stream">Stream</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Request.SyncRequest.ChatFileDownloadThumbnail(System.String,System.String,System.IO.Stream,System.Nullable{System.Int32})">
+            <summary>
+            下载缩略图
+            </summary>
+            <param name="shareSecret">上传资源时返回的share-secret</param>
+            <param name="uuid">上传资源时返回的uuid</param>
+            <param name="stream">Stream</param>
+            <param name="timeOut">默认null为ServerConfig的值</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.Get">
+            <summary>
+            Get请求处理
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Get.GetJson``1(System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Get请求，（简单请求）
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="contentType">ContentType</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Get.GetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Get请求，（加入cookie）
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="postDataDictionary">字典参数数据流</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="contentType">ContentType</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Get.FillDownload(System.String,System.IO.Stream,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            从url下载
+            </summary>
+            <param name="url">地址</param>
+            <param name="stream">填充的Stream</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="contentType">ContentType</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.Delete">
+            <summary>
+            Delete请求处理
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Delete.DeleteGetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Delete请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Delete.DeleteGetJson``2(System.String,System.Net.CookieContainer,System.Collections.Generic.IList{``1},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Delete请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <typeparam name="T2">formData的数据类型</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.Put">
+            <summary>
+            PUT请求处理
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Put.PutGetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Put请求，可上传文件
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="fileDictionary">字典文件流，需要上传的文件，Key：对应要上传的Name，Value：本地文件名</param>
+            <param name="postDataDictionary">字典参数数据流</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Put.PutGetJson``1(System.String,System.Net.CookieContainer,System.IO.Stream,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Put请求，可上传文件
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="postStream">参数数据流</param>
+            <param name="fileDictionary">字典文件流，需要上传的文件，Key：对应要上传的Name，Value：本地文件名</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">HeaderDictionary</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Put.PutGetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Put请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Put.PutGetJson``2(System.String,System.Net.CookieContainer,System.Collections.Generic.IList{``1},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Put请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <typeparam name="T2">formData的数据类型</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Put.FillDownload(System.String,System.String,System.IO.Stream,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Put方法上传数据并下载文件或结果
+            </summary>
+            <param name="url">地址</param>
+            <param name="data">json数据</param>
+            <param name="stream">填充的Stream</param>
+            <param name="contentType">ContentType</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.Post">
+            <summary>
+            POST请求处理
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Post.PostGetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Post请求，可上传文件
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="fileDictionary">字典文件流，需要上传的文件，Key：对应要上传的Name，Value：本地文件名</param>
+            <param name="postDataDictionary">字典参数数据流</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Post.PostGetJson``1(System.String,System.Net.CookieContainer,System.IO.Stream,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发起Post请求，可上传文件
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="postStream">参数数据流</param>
+            <param name="fileDictionary">字典文件流，需要上传的文件，Key：对应要上传的Name，Value：本地文件名</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">HeaderDictionary</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Post.PostGetJson``1(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Post请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Post.PostGetJson``2(System.String,System.Net.CookieContainer,System.Collections.Generic.IList{``1},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            发送Post请求，常规请求
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <typeparam name="T2">formData的数据类型</typeparam>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.Post.FillDownload(System.String,System.String,System.IO.Stream,System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Post方法上传数据并下载文件或结果
+            </summary>
+            <param name="url">地址</param>
+            <param name="data">json数据</param>
+            <param name="stream">填充的Stream</param>
+            <param name="contentType">ContentType</param>
+            <param name="isDebug">是否为debug，默认false</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility">
+            <summary>
+            请求工具
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.SetHttpProxy(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置Web代理
+            </summary>
+            <param name="host">服务器地址</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="port">端口，默认null为80</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.RemoveHttpProxy">
+            <summary>
+            清除Web代理状态
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.HttpGet(System.String,System.Text.Encoding,System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Get方法获取字符串结果（没有加入Cookie）(使用WebClient)
+            </summary>
+            <param name="url">地址</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="contentType">ContentType</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.HttpGet(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Collections.Generic.Dictionary{System.String,System.String},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Get方法获取字符串结果（加入Cookie）(使用HttpWebReqeust)
+            </summary>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">默认null为使用url，如果此值不为null，将拼接url进行请求</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="contentType">ContentType</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.HttpPost(System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},Easemob.Restfull4Net.Common.HttpMethod,System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Post方法获取字符串结果，常规提交
+            </summary>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="formData">参数</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="method">HtppMethod默认null为POST</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.RequestUtility.HttpPost(System.String,System.Net.CookieContainer,System.IO.Stream,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Text.Encoding,System.Nullable{System.Int32},System.Nullable{Easemob.Restfull4Net.Common.ContentType},System.Collections.Generic.Dictionary{System.String,System.String},Easemob.Restfull4Net.Common.HttpMethod,System.Nullable{Easemob.Restfull4Net.Common.ContentType})">
+            <summary>
+            使用Post方法获取字符串结果，上传文件
+            </summary>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+            <param name="postStream">表单参数数据流</param>
+            <param name="fileDictionary">字典文件流，需要上传的文件，Key：对应要上传的Name，Value：本地文件名</param>
+            <param name="encoding">默认null为UTF8</param>
+            <param name="timeOut">默认null为10秒</param>
+            <param name="refererUrl">RefererUrl</param>
+            <param name="contentType">ContentType</param>
+            <param name="headerDictionary">自定义请求头参数</param>
+            <param name="method">HtppMethod默认null为POST</param>
+            <param name="accept">Accept</param>
+        </member>
+        <member name="T:Easemob.Restfull4Net.Utility.HttpUtility.SerializerUtility">
+            <summary>
+            特殊的序列化工具
+            </summary>
+        </member>
+        <member name="M:Easemob.Restfull4Net.Utility.HttpUtility.SerializerUtility.GetResult``1(System.String,System.String,System.Nullable{System.Net.HttpStatusCode},System.Nullable{System.Int32})">
+            <summary>
+            获取Post结果
+            </summary>
+            <typeparam name="T">返回数据类型（Json对应的实体）</typeparam>
+            <param name="returnText">要序列化的JSON</param>
+            <param name="errorText">错误信息的JSON，默认为null</param>
+            <param name="statusCode">错误返回的请求码</param>
+            <param name="maxJsonLength">允许最大JSON长度</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,4 @@
+E:\开发工程\GitHub\1_dotnet_example\资源文件共享\WebApplication_Test\WebApplication_Test2\bin\WebApplication_Test.dll
+E:\开发工程\GitHub\1_dotnet_example\资源文件共享\WebApplication_Test\WebApplication_Test2\bin\WebApplication_Test.pdb
+E:\开发工程\GitHub\1_dotnet_example\资源文件共享\WebApplication_Test\WebApplication_Test2\obj\Debug\WebApplication_Test.dll
+E:\开发工程\GitHub\1_dotnet_example\资源文件共享\WebApplication_Test\WebApplication_Test2\obj\Debug\WebApplication_Test.pdb
